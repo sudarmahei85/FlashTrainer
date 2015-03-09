@@ -1,6 +1,7 @@
 package hci.divinesymphony.net.flashtrainer;
 
 import hci.divinesymphony.net.flashtrainer.backend.SampleProblemSet;
+import hci.divinesymphony.net.flashtrainer.backend.Selector;
 import hci.divinesymphony.net.flashtrainer.beans.ProblemSet;
 import hci.divinesymphony.net.flashtrainer.beans.DisplayItem;
 import hci.divinesymphony.net.flashtrainer.util.SystemUiHider;
@@ -196,6 +197,10 @@ public class Quiz extends Activity {
         //TODO replace this line with a call providing a randomly selected problem set
         this.probSet = SampleProblemSet.getSample();
 
+        //TODO this is currently crashing
+        Selector selector = new Selector();
+        selector.getProblemSet();
+
         DisplayItem problem = probSet.getProblem();
         List<DisplayItem> responses = probSet.getResponses();
 
@@ -269,7 +274,7 @@ public class Quiz extends Activity {
 
     void reward() {
         //TODO issue a reward experience
-        String url = "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test1_Talkinghead_mp4_480x360.mp4"; // your URL here
+        String url = "http://ia600402.us.archive.org/27/items/test-mpeg2/test-mpeg2_512kb.mp4"; // your URL here
         MediaPlayer mediaPlayer = new MediaPlayer();
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         try {

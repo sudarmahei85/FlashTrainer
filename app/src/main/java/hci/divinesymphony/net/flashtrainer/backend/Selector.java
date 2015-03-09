@@ -31,29 +31,42 @@ public class Selector
     int max = 100;
     int min=1;
     private Random picker;
-    private ArrayList<Problem> questions;
-    //private ArrayList<Response> answers;
+    private final ArrayList<Problem> questions = new ArrayList<Problem>();
+    //private ArrayList<Response> answers = new ArrayList<Response>();
     private Queue<String> recentproblem = new LinkedList<String>();
+    private final String xmlFile;
 
     public Selector() {
-        questions = new ArrayList<Problem>();
-        //answers = new ArrayList<Response>();
+        //TODO not sure where this should be stored or referenced in the application
+        this.xmlFile = "communication.xml";
     }
 
     // Five Random weight is got and then it's checked against the weight in problem list.
     // One problem is choosen, the id is added to queue to keep track of recent onces and the first one is remove when queue reaches size 10.
     public ProblemSet getProblemSet(){
-        boolean choosenProblem = false;
-        ProblemSet problemSet;
+        //boolean choosenProblem = false;
         DomParser dom = new DomParser();
         List<Problem> problemList= dom.getQuestions();
+
+        List<Problem> weighted = new ArrayList();
+        for (Problem prob : dom.getQuestions()) {
+            for (int i = prob.getWeight(); i > 0; i--) {
+                weighted.add(prob);
+            }
+        }
+
+        int index = (int)( Math.random()*weighted.size() );
+
+        Problem problem = weighted.get(index);
+        DisplayItem disproblem = new DisplayItem(problem.getText(), problem.getprobID());
+
+/*
         while (!choosenProblem){
             for(int weightInder:getWeightIndex()) {
                 for (Problem problem : problemList) {
                     if (Integer.getInteger(problem.getWeight()) == weightInder) {
                         if (!recentproblem.contains(problem.getprobID())) {
                             DisplayItem disproblem = new DisplayItem(problem.getText(), problem.getprobID());
-                            problemSet= new ProblemSet(disproblem, answerChoice(problem));
                             choosenProblem= true;
                             recentproblem.add(problem.getprobID());
                             if (recentproblem.size() > 10) {
@@ -64,16 +77,12 @@ public class Selector
 
                 }
             }
-
-
         }
-
-        return problemSet;
-
-
+*/
+        return new ProblemSet(disproblem, answerChoice(problem));
     }
 
-
+/*
     public List<Integer> getWeightIndex()
     {
         List<Integer> weightlist =  new ArrayList<Integer>();
@@ -84,10 +93,12 @@ public class Selector
         return weightlist;
 
     }
+*/
+
     // The answer needs to be worked on, the prasing is missing Response object.
     public List<DisplayItem> answerChoice(Problem problem)
     {
-        List<DisplayItem> responses = new ArrayList<DisplayItem>();
+        List<DisplayItem> responses = new ArrayList<DisplayItem>(4);
         responses.add(new DisplayItem(RandomStringUtils.randomAlphabetic(1), "45"));
         responses.add(new DisplayItem(RandomStringUtils.randomAlphabetic(1), "af"));
         responses.add(new DisplayItem(RandomStringUtils.randomAlphabetic(1), "4v"));

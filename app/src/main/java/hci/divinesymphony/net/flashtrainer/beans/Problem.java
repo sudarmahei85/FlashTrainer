@@ -14,13 +14,13 @@ public class Problem {
 		
 	private String probID;
 	
-	private String weight;
+	private int weight;
 	
 	public Problem(){
 		
 	}
 	
-	public Problem(String text, String audio, String image,String probID, String weight) {
+	public Problem(String text, String audio, String image,String probID, int weight) {
 		this.text = text;
 		this.audio = audio;
 		this.image  = image;
@@ -60,11 +60,11 @@ public class Problem {
 		this.probID = probID;
 	}	
 	
-	public String getWeight() {
+	public int getWeight() {
 		return weight;
 	}
 
-	public void setWeight(String weight) {
+	public void setWeight(int weight) {
 		this.weight = weight;
 	}
 	

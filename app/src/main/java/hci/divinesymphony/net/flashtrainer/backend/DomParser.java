@@ -14,14 +14,21 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import hci.divinesymphony.net.flashtrainer.beans.Problem;
+
 public class DomParser {
 
-	List questions;
-	Document dom;
+    private List questions = new ArrayList();
+	private Document dom;
+    private static String xmlFile;
 
 	public DomParser(){
-		questions = new ArrayList();
+        this("XML_Sample.xml");
 	}
+
+    public DomParser(String xmlFile) {
+        this.xmlFile = xmlFile;
+    }
 
 	public void runExample() {
 		
@@ -35,7 +42,7 @@ public class DomParser {
 		printData();
 	}
 
-    public List getQuestions(){
+    public List<Problem> getQuestions(){
         return this.questions;
     }
 	//Taken from http://www.java-samples.com/showtutorial.php?tutorialid=152
@@ -49,9 +56,8 @@ public class DomParser {
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			
 			//parse using builder to get DOM representation of the XML file
-			
-			//Specify XML file Title Here
-			dom = db.parse("XML_Sample.xml");
+
+			dom = db.parse(this.xmlFile);
 			
 
 		}catch(ParserConfigurationException pce) {
@@ -93,7 +99,7 @@ public class DomParser {
 
 		String probID = El.getAttribute("probid");
 		
-		String weight = El.getAttribute("weight");
+		int weight = Integer.parseInt(El.getAttribute("weight"));
 		
 		
 		//Create a new Problem with the value read from the xml nodes

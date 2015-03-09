@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FlashTrainer.iml" filepath="$PROJECT_DIR$/FlashTrainer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lib/Lib.iml" filepath="$PROJECT_DIR$/Lib/Lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lib/commons-lang3-3.1.jar/commons-lang3-3.1.jar.iml" filepath="$PROJECT_DIR$/Lib/commons-lang3-3.1.jar/commons-lang3-3.1.jar.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lib/commons-lang3-3.1.jar/commons-lang3-3.1.jar.iml" filepath="$PROJECT_DIR$/Lib/commons-lang3-3.1.jar/commons-lang3-3.1.jar.iml" />
     </modules>
   </component>
