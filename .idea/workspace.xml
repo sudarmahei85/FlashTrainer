@@ -13,22 +13,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9920c6cc-d780-4ea0-bb68-31ec61988720" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Lib/Lib.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/commons_lang3_3_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/DomParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/DomParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlashTrainer.iml" afterPath="$PROJECT_DIR$/FlashTrainer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Problem.java" afterPath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Problem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java" afterPath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/Selector.java" afterPath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/Selector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_21_0_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_21_0_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_21_0_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_21_0_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_21_0_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_21_0_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FlashTrainer.iws" />
@@ -1254,7 +1238,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="vcs.Git" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -1452,6 +1436,11 @@
       <created>1425875230742</created>
       <updated>1425875230742</updated>
     </task>
+    <task id="LOCAL-00001" summary="A bunch of cleanup, some minor refactoring of the selector stuff, etc.&#10;&#10;Selector code still crashes, and I suspect that's primarily because the XML location seems off.  I've moved that to the constructor in Selector class so it's easier to change, but I don't yet know how to reference files within the application that will later become local storage.">
+      <created>1425881609162</created>
+      <updated>1425881609162</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1523,6 +1512,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="A bunch of cleanup, some minor refactoring of the selector stuff, etc.&#10;&#10;Selector code still crashes, and I suspect that's primarily because the XML location seems off.  I've moved that to the constructor in Selector class so it's easier to change, but I don't yet know how to reference files within the application that will later become local storage." />
+    <option name="LAST_COMMIT_MESSAGE" value="A bunch of cleanup, some minor refactoring of the selector stuff, etc.&#10;&#10;Selector code still crashes, and I suspect that's primarily because the XML location seems off.  I've moved that to the constructor in Selector class so it's easier to change, but I don't yet know how to reference files within the application that will later become local storage." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
