@@ -2,6 +2,10 @@ package hci.divinesymphony.net.flashtrainer.backend;
 
 
 
+import android.content.res.AssetManager;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.Override;
@@ -34,19 +38,17 @@ public class Selector
     private final ArrayList<Problem> questions = new ArrayList<Problem>();
     //private ArrayList<Response> answers = new ArrayList<Response>();
     private Queue<String> recentproblem = new LinkedList<String>();
-    private final String xmlFile;
+    private final InputStream is;
 
-    public Selector() {
-        //TODO not sure where this should be stored or referenced in the application
-        this.xmlFile = "communication.xml";
+    public Selector(InputStream is) {
+        this.is = is;
     }
 
     // Five Random weight is got and then it's checked against the weight in problem list.
     // One problem is choosen, the id is added to queue to keep track of recent onces and the first one is remove when queue reaches size 10.
     public ProblemSet getProblemSet(){
         //boolean choosenProblem = false;
-        DomParser dom = new DomParser();
-        List<Problem> problemList= dom.getQuestions();
+        DomParser dom = new DomParser(this.is);
 
         List<Problem> weighted = new ArrayList();
         for (Problem prob : dom.getQuestions()) {

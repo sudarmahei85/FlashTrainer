@@ -8,18 +8,25 @@ import hci.divinesymphony.net.flashtrainer.util.SystemUiHider;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.res.AssetFileDescriptor;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.view.View.OnClickListener;
+import android.widget.VideoView;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.List;
 import java.io.IOException;
+import java.io.FileDescriptor;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -27,7 +34,7 @@ import java.io.IOException;
  *
  * @see SystemUiHider
  */
-public class Quiz extends Activity {
+public class Quiz extends Activity implements SurfaceHolder.Callback, MediaPlayer.OnPreparedListener {
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -63,6 +70,13 @@ public class Quiz extends Activity {
     private Button btn_2;
     private Button btn_3;
 
+    private MediaPlayer mediaPlayer;
+    private SurfaceHolder vidHolder;
+    private SurfaceView vidSurface;
+
+    private View controlsView;
+    private View contentView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,8 +97,10 @@ public class Quiz extends Activity {
         this.btn_2.setOnClickListener(oclResponse_2);
         this.btn_3.setOnClickListener(oclResponse_3);
 
-        final View controlsView = findViewById(R.id.fullscreen_content_controls);
-        final View contentView = findViewById(R.id.fullscreen_content);
+        controlsView = findViewById(R.id.fullscreen_content_controls);
+        contentView = findViewById(R.id.fullscreen_content);
+
+        controlsView.setVisibility(View.GONE);
 
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
@@ -145,6 +161,12 @@ public class Quiz extends Activity {
         // while interacting with the UI.
         findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
 
+        //Initialize the video playback surface
+        vidSurface = (SurfaceView) findViewById(R.id.fullscreen_content);
+        vidSurface.setVisibility(View.GONE);
+        vidHolder = vidSurface.getHolder();
+        vidHolder.addCallback(this);
+        this.mediaPlayer = new MediaPlayer();
 
         //Initialize with a real problem set
         this.populate_problem();
@@ -198,8 +220,15 @@ public class Quiz extends Activity {
         this.probSet = SampleProblemSet.getSample();
 
         //TODO this is currently crashing
-        Selector selector = new Selector();
-        selector.getProblemSet();
+
+        try {
+            InputStream is = this.getAssets().open("current.xml");
+            Selector selector = new Selector(is);
+            this.probSet = selector.getProblemSet();
+        } catch (IOException e) {
+            throw new RuntimeException("Don't yet know how to handle error reporting at this stage", e);
+        }
+
 
         DisplayItem problem = probSet.getProblem();
         List<DisplayItem> responses = probSet.getResponses();
@@ -262,31 +291,40 @@ public class Quiz extends Activity {
 
         if (correct) {
             this.reward();
+            this.populate_problem();
         } else {
             this.punish();
         }
-
-//TODO this old code just shows the user selection for debugging, can be deleted
-//        String test_string = Integer.toString(N);
-//        this.btn_problem.setText(test_string);
-
     }
 
     void reward() {
+        vidSurface.setVisibility(View.GONE);
+
         //TODO issue a reward experience
-        String url = "http://ia600402.us.archive.org/27/items/test-mpeg2/test-mpeg2_512kb.mp4"; // your URL here
-        MediaPlayer mediaPlayer = new MediaPlayer();
-        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        String vidUri = "https://ia700401.us.archive.org/19/items/ksnn_compilation_master_the_internet/ksnn_compilation_master_the_internet_512kb.mp4";
+
+        //TODO this is currently broken, but I had streaming playback working before, without the setDisplay call
+ /*
         try {
-            mediaPlayer.setDataSource(url);
-            mediaPlayer.prepare(); // might take long! (for buffering, etc)
+            AssetFileDescriptor descriptor = this.getAssets().openFd("mmch_intro.mp4");
+            descriptor.getLength();
+            mediaPlayer.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
+            descriptor.close();
+//            this.mediaPlayer.setDataSource(vidUri);
+            this.mediaPlayer.setDisplay(this.vidHolder);
+            this.mediaPlayer.prepare(); // might take long! (for buffering, etc)
+            this.mediaPlayer.setOnPreparedListener(this);
+            this.mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         } catch (IOException e) {
+            throw new RuntimeException(e);
             //intentionally do nothing, as we can't recover from a missing video other than immediately returning to the quiz
         }
+*/
 
-        mediaPlayer.start();
-        mediaPlayer.release();
-        mediaPlayer = null;
+//        this.mediaPlayer.start();
+//      this.mediaPlayer.release();
+
+        vidSurface.setVisibility(View.VISIBLE);
     }
 
     void punish() {
@@ -299,4 +337,26 @@ public class Quiz extends Activity {
         }
     }
 
+    @Override
+    public void surfaceCreated(SurfaceHolder holder) {
+        //auto-generated method stub
+    }
+
+    @Override
+    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+        //setup
+    }
+
+    @Override
+    public void surfaceDestroyed(SurfaceHolder holder) {
+        //auto-generated method stub
+    }
+
+    @Override
+    public void onPrepared(MediaPlayer mp) {
+        //start playback
+        mp.start();
+        //not sure if I should be resetting like this
+        mp.reset();
+    }
 }

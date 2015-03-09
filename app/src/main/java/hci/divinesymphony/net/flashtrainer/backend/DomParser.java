@@ -1,6 +1,8 @@
 package hci.divinesymphony.net.flashtrainer.backend;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -18,18 +20,21 @@ import hci.divinesymphony.net.flashtrainer.beans.Problem;
 
 public class DomParser {
 
-    private List questions = new ArrayList();
+    private final List questions = new ArrayList();
 	private Document dom;
-    private static String xmlFile;
+    private final InputStream is;
 
-	public DomParser(){
-        this("XML_Sample.xml");
-	}
-
-    public DomParser(String xmlFile) {
-        this.xmlFile = xmlFile;
+    public DomParser(String xmlFile) throws IOException {
+        this(new FileInputStream(xmlFile));
     }
 
+    public DomParser(InputStream is) {
+        this.is = is;
+        this.parseXmlFile();
+        this.parseDocument();
+    }
+
+/*
 	public void runExample() {
 		
 		//parse the xml file and get the dom object
@@ -41,31 +46,33 @@ public class DomParser {
 		//Iterate through the list and print the data
 		printData();
 	}
+*/
 
     public List<Problem> getQuestions(){
+        if (this.questions.size() == 0) {
+            throw new RuntimeException("The problem set is empty!");
+        }
+
         return this.questions;
     }
 	//Taken from http://www.java-samples.com/showtutorial.php?tutorialid=152
 	private void parseXmlFile(){
 		//get the factory
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		
+
 		try {
-			
-			//Using factory get an instance of document builder
-			DocumentBuilder db = dbf.newDocumentBuilder();
-			
+            //Using factory get an instance of document builder
+            DocumentBuilder db = dbf.newDocumentBuilder();
+
 			//parse using builder to get DOM representation of the XML file
+			dom = db.parse(this.is);
 
-			dom = db.parse(this.xmlFile);
-			
-
-		}catch(ParserConfigurationException pce) {
-			pce.printStackTrace();
-		}catch(SAXException se) {
-			se.printStackTrace();
-		}catch(IOException ioe) {
-			ioe.printStackTrace();
+		}catch(ParserConfigurationException e) {
+			throw new RuntimeException(e);
+		}catch(SAXException e) {
+            throw new RuntimeException(e);
+		}catch(IOException e) {
+            throw new RuntimeException(e);
 		}
 	}
 
@@ -128,12 +135,12 @@ public class DomParser {
 
 		return textVal;
 	}
-	
-	/**
+
+    /**
 	 * Iterate through the list and print the 
 	 * content to console
 	 */
-	private void printData(){
+	/* private void printData(){
 		
 		System.out.println("No of Questions '" + questions.size() + "'.");
 		
@@ -146,11 +153,13 @@ public class DomParser {
 	
 	public static void main(String[] args){
 		//create an instance
-		DomParser dpe = new DomParser();
+		DomParser dpe = new DomParser("");
 		
 		//call run example
 		dpe.runExample();
 		
 	}
+
+*/
 
 }
