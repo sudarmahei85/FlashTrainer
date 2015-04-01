@@ -14,6 +14,7 @@ import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -34,7 +35,11 @@ import java.io.FileDescriptor;
  *
  * @see SystemUiHider
  */
-public class Quiz extends Activity implements SurfaceHolder.Callback, MediaPlayer.OnPreparedListener {
+public class Quiz extends Activity implements
+        SurfaceHolder.Callback,
+        MediaPlayer.OnPreparedListener,
+        MediaPlayer.OnCompletionListener,
+        MediaPlayer.OnErrorListener {
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -71,11 +76,13 @@ public class Quiz extends Activity implements SurfaceHolder.Callback, MediaPlaye
     private Button btn_3;
 
     private MediaPlayer mediaPlayer;
-    private SurfaceHolder vidHolder;
     private SurfaceView vidSurface;
 
     private View controlsView;
     private View contentView;
+    private View mainUIView;
+
+    private boolean playing = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,10 +104,12 @@ public class Quiz extends Activity implements SurfaceHolder.Callback, MediaPlaye
         this.btn_2.setOnClickListener(oclResponse_2);
         this.btn_3.setOnClickListener(oclResponse_3);
 
-        controlsView = findViewById(R.id.fullscreen_content_controls);
-        contentView = findViewById(R.id.fullscreen_content);
+        this.controlsView = findViewById(R.id.fullscreen_content_controls);
+        this.controlsView.setVisibility(View.GONE);
 
-        controlsView.setVisibility(View.GONE);
+        this.mainUIView = findViewById(R.id.main_ui);
+
+        this.contentView = findViewById(R.id.fullscreen_content);
 
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
@@ -162,11 +171,19 @@ public class Quiz extends Activity implements SurfaceHolder.Callback, MediaPlaye
         findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
 
         //Initialize the video playback surface
-        vidSurface = (SurfaceView) findViewById(R.id.fullscreen_content);
-        vidSurface.setVisibility(View.GONE);
-        vidHolder = vidSurface.getHolder();
-        vidHolder.addCallback(this);
+//        this.mediaPlayer = new MediaPlayer();
+
+        this.vidSurface = (SurfaceView) findViewById(R.id.fullscreen_content);
+        this.vidSurface.setVisibility(View.VISIBLE);
+        this.vidSurface.getHolder().addCallback(this);
+
         this.mediaPlayer = new MediaPlayer();
+
+        this.mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        this.mediaPlayer.setScreenOnWhilePlaying(true);
+        this.mediaPlayer.setOnPreparedListener(this);
+        this.mediaPlayer.setOnCompletionListener(this);
+        this.mediaPlayer.setOnErrorListener(this);
 
         //Initialize with a real problem set
         this.populate_problem();
@@ -220,7 +237,6 @@ public class Quiz extends Activity implements SurfaceHolder.Callback, MediaPlaye
         this.probSet = SampleProblemSet.getSample();
 
         //TODO this is currently crashing
-
         try {
             InputStream is = this.getAssets().open("current.xml");
             Selector selector = new Selector(is);
@@ -289,45 +305,52 @@ public class Quiz extends Activity implements SurfaceHolder.Callback, MediaPlaye
 
         boolean correct = hci.divinesymphony.net.flashtrainer.backend.AnswerChecker.isCorrect(this.probSet, selectedId);
 
-        if (correct) {
-            this.reward();
-            this.populate_problem();
-        } else {
-            this.punish();
+        synchronized(this) {
+            if (correct && !playing) {
+                this.reward();
+                this.populate_problem();
+            } else {
+                this.punish();
+            }
         }
     }
 
     void reward() {
-        vidSurface.setVisibility(View.GONE);
+        synchronized(this) {
+            this.playing = true;
+        }
 
         //TODO issue a reward experience
-        String vidUri = "https://ia700401.us.archive.org/19/items/ksnn_compilation_master_the_internet/ksnn_compilation_master_the_internet_512kb.mp4";
 
-        //TODO this is currently broken, but I had streaming playback working before, without the setDisplay call
- /*
+        String vidUri = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
         try {
-            AssetFileDescriptor descriptor = this.getAssets().openFd("mmch_intro.mp4");
-            descriptor.getLength();
-            mediaPlayer.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
-            descriptor.close();
-//            this.mediaPlayer.setDataSource(vidUri);
-            this.mediaPlayer.setDisplay(this.vidHolder);
-            this.mediaPlayer.prepare(); // might take long! (for buffering, etc)
-            this.mediaPlayer.setOnPreparedListener(this);
+//            AssetFileDescriptor descriptor = this.getAssets().openFd("mmch_intro.mp4");
+//            descriptor.getLength();
+//            mediaPlayer.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
+//            descriptor.close();
+
+/*
+            this.mediaPlayer = new MediaPlayer();
+
             this.mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+            this.mediaPlayer.setScreenOnWhilePlaying(true);
+            this.mediaPlayer.setOnPreparedListener(this);
+            this.mediaPlayer.setOnCompletionListener(this);
+            this.mediaPlayer.setOnErrorListener(this);
+
+            this.mediaPlayer.setDisplay(this.vidSurface.getHolder());
+*/
+
+            this.mediaPlayer.setDataSource(vidUri);
+            this.mediaPlayer.prepare(); // might take long! (for buffering, etc)
+
         } catch (IOException e) {
             throw new RuntimeException(e);
             //intentionally do nothing, as we can't recover from a missing video other than immediately returning to the quiz
         }
-*/
-
-//        this.mediaPlayer.start();
-//      this.mediaPlayer.release();
-
-        vidSurface.setVisibility(View.VISIBLE);
     }
 
-    void punish() {
+    synchronized void punish() {
         //TODO punish the user with a delay and or lockout - this code may not work, needs testing
         try {
             Thread.sleep(4000);
@@ -339,12 +362,12 @@ public class Quiz extends Activity implements SurfaceHolder.Callback, MediaPlaye
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        //auto-generated method stub
+        this.mediaPlayer.setDisplay(holder);
     }
 
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-        //setup
+//        this.mediaPlayer.setDisplay(holder);
     }
 
     @Override
@@ -352,11 +375,29 @@ public class Quiz extends Activity implements SurfaceHolder.Callback, MediaPlaye
         //auto-generated method stub
     }
 
-    @Override
     public void onPrepared(MediaPlayer mp) {
-        //start playback
+        this.mainUIView.setVisibility(View.INVISIBLE);
+//        this.vidSurface.setVisibility(View.VISIBLE);
         mp.start();
-        //not sure if I should be resetting like this
-        mp.reset();
     }
+
+    public void onCompletion(MediaPlayer mp) {
+        if (mp != null) {
+            if (mp.isPlaying()) {
+                mp.stop();
+            }
+            mp.reset();
+        }
+//        this.vidSurface.setVisibility(View.INVISIBLE);
+        this.mainUIView.setVisibility(View.VISIBLE);
+
+        synchronized (this) {
+            this.playing = false;
+        }
+    }
+
+    public boolean onError(MediaPlayer mp, int what, int extra) {
+        return true;
+    }
+
 }
