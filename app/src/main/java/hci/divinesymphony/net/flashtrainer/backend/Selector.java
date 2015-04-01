@@ -46,7 +46,7 @@ public class Selector
 
     // Five Random weight is got and then it's checked against the weight in problem list.
     // One problem is choosen, the id is added to queue to keep track of recent onces and the first one is remove when queue reaches size 10.
-    public ProblemSet getProblemSet(){
+    public ProblemSet getProblemSet() {
         //boolean choosenProblem = false;
         DomParser dom = new DomParser(this.is);
 
@@ -62,44 +62,25 @@ public class Selector
         Problem problem = weighted.get(index);
         DisplayItem disproblem = new DisplayItem(problem.getText(), problem.getprobID());
 
-/*
-        while (!choosenProblem){
-            for(int weightInder:getWeightIndex()) {
-                for (Problem problem : problemList) {
-                    if (Integer.getInteger(problem.getWeight()) == weightInder) {
-                        if (!recentproblem.contains(problem.getprobID())) {
-                            DisplayItem disproblem = new DisplayItem(problem.getText(), problem.getprobID());
-                            choosenProblem= true;
-                            recentproblem.add(problem.getprobID());
-                            if (recentproblem.size() > 10) {
-                                recentproblem.remove();
-                            }
-                        }
-                    }
-
-                }
-            }
-        }
-*/
         return new ProblemSet(disproblem, answerChoice(problem));
     }
 
-/*
-    public List<Integer> getWeightIndex()
-    {
-        List<Integer> weightlist =  new ArrayList<Integer>();
-        for(int i =0;i<5;i++) {
-            weightlist.add(picker.nextInt(((max - min) + 1) + min));
-        }
-        Collections.sort( weightlist );
-        return weightlist;
 
+    //TODO - return a random reward object form the XML file
+    public DisplayItem getReward() {
+        //get this list from the XML file instead - only using the url for now -- should be the value from the xml
+        List<DisplayItem> rewards = new ArrayList<DisplayItem>(2);
+        rewards.add(new DisplayItem(DisplayItem.MediaType.VIDEO, "34", "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", "Big Buck Bunny"));
+        rewards.add(new DisplayItem(DisplayItem.MediaType.VIDEO, "92", "http://techslides.com/demos/sample-videos/small.mp4", "Random Sample"));
+
+        int index = (int)( Math.random()*rewards.size() );
+        return rewards.get(index);
     }
-*/
 
-    // The answer needs to be worked on, the prasing is missing Response object.
+    //TODO - The answer needs to be worked on, the parsing is missing Response object.
     public List<DisplayItem> answerChoice(Problem problem)
     {
+        //get these from the XML file instead
         List<DisplayItem> responses = new ArrayList<DisplayItem>(4);
         responses.add(new DisplayItem(RandomStringUtils.randomAlphabetic(1), "45"));
         responses.add(new DisplayItem(RandomStringUtils.randomAlphabetic(1), "af"));

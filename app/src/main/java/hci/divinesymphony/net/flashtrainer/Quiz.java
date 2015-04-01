@@ -69,6 +69,8 @@ public class Quiz extends Activity implements
     private SystemUiHider mSystemUiHider;
 
     private ProblemSet probSet;
+    private DisplayItem reward;
+
     private Button btn_problem;
     private Button btn_0;
     private Button btn_1;
@@ -241,6 +243,7 @@ public class Quiz extends Activity implements
             InputStream is = this.getAssets().open("current.xml");
             Selector selector = new Selector(is);
             this.probSet = selector.getProblemSet();
+            this.reward = selector.getReward();
         } catch (IOException e) {
             throw new RuntimeException("Don't yet know how to handle error reporting at this stage", e);
         }
@@ -321,9 +324,9 @@ public class Quiz extends Activity implements
             this.playing = true;
         }
 
-        //TODO issue a reward experience
+        //TODO - replace with reads from local files after downloader is finished
 
-        String vidUri = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
+        String vidUri = this.reward.getFile();
         try {
 //            AssetFileDescriptor descriptor = this.getAssets().openFd("mmch_intro.mp4");
 //            descriptor.getLength();
