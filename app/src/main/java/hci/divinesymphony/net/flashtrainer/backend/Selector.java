@@ -69,6 +69,7 @@ public class Selector
     //TODO - return a random reward object form the XML file
     public DisplayItem getReward() {
         //get this list from the XML file instead - only using the url for now -- should be the value from the xml
+        //don't forget that we also need a way to fetch a List of all the files so the downloader can do it's thing
         List<DisplayItem> rewards = new ArrayList<DisplayItem>(2);
         rewards.add(new DisplayItem(DisplayItem.MediaType.VIDEO, "34", "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", "Big Buck Bunny"));
         rewards.add(new DisplayItem(DisplayItem.MediaType.VIDEO, "92", "http://techslides.com/demos/sample-videos/small.mp4", "Random Sample"));
