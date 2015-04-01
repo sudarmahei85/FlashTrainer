@@ -317,6 +317,7 @@ public class Quiz extends Activity implements
 
     void reward() {
         synchronized(this) {
+            this.vidSurface.setVisibility(View.VISIBLE);
             this.playing = true;
         }
 
@@ -377,7 +378,6 @@ public class Quiz extends Activity implements
 
     public void onPrepared(MediaPlayer mp) {
         this.mainUIView.setVisibility(View.INVISIBLE);
-//        this.vidSurface.setVisibility(View.VISIBLE);
         mp.start();
     }
 
@@ -388,7 +388,7 @@ public class Quiz extends Activity implements
             }
             mp.reset();
         }
-//        this.vidSurface.setVisibility(View.INVISIBLE);
+        this.vidSurface.setVisibility(View.INVISIBLE);
         this.mainUIView.setVisibility(View.VISIBLE);
 
         synchronized (this) {

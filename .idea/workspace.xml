@@ -18,10 +18,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9920c6cc-d780-4ea0-bb68-31ec61988720" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java" afterPath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_quiz.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_quiz.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FlashTrainer.iws" />
@@ -68,8 +65,8 @@
       <file leaf-file-name="Quiz.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8802817" vertical-offset="5520" max-vertical-offset="6135">
-              <caret line="393" column="0" selection-start-line="393" selection-start-column="0" selection-end-line="393" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6126761" vertical-offset="5589" max-vertical-offset="6135">
+              <caret line="390" column="0" selection-start-line="390" selection-start-column="0" selection-end-line="390" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#6020#6309#0" expanded="true" />
@@ -88,8 +85,8 @@
                 <element signature="e#10515#10516#0" expanded="true" />
                 <element signature="e#10560#10688#0" expanded="true" />
                 <element signature="e#10681#10682#0" expanded="true" />
-                <element signature="e#13000#13001#0" expanded="true" />
-                <element signature="e#13051#13052#0" expanded="true" />
+                <element signature="e#13057#13058#0" expanded="true" />
+                <element signature="e#13108#13109#0" expanded="true" />
                 <element signature="e#13947#13948#0" expanded="true" />
                 <element signature="e#13974#13975#0" expanded="true" />
               </folding>
@@ -1568,7 +1565,11 @@
       <created>1425931841837</created>
       <updated>1425931841837</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="After about 90 code revisions, we can now play multiple rewards without crashing the application.  Yay (really though, this API sucks)!">
+      <created>1427859950673</created>
+      <updated>1427859950673</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1643,7 +1644,8 @@
     </option>
     <MESSAGE value="A bunch of cleanup, some minor refactoring of the selector stuff, etc.&#10;&#10;Selector code still crashes, and I suspect that's primarily because the XML location seems off.  I've moved that to the constructor in Selector class so it's easier to change, but I don't yet know how to reference files within the application that will later become local storage." />
     <MESSAGE value="Minor UI refinements, addition of another example to our sample XML, and some more rewards handling work." />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor UI refinements, addition of another example to our sample XML, and some more rewards handling work." />
+    <MESSAGE value="After about 90 code revisions, we can now play multiple rewards without crashing the application.  Yay (really though, this API sucks)!" />
+    <option name="LAST_COMMIT_MESSAGE" value="After about 90 code revisions, we can now play multiple rewards without crashing the application.  Yay (really though, this API sucks)!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1687,8 +1689,8 @@
             <element signature="e#10515#10516#0" expanded="true" />
             <element signature="e#10560#10688#0" expanded="true" />
             <element signature="e#10681#10682#0" expanded="true" />
-            <element signature="e#13000#13001#0" expanded="true" />
-            <element signature="e#13051#13052#0" expanded="true" />
+            <element signature="e#13057#13058#0" expanded="true" />
+            <element signature="e#13108#13109#0" expanded="true" />
             <element signature="e#13947#13948#0" expanded="true" />
             <element signature="e#13974#13975#0" expanded="true" />
           </folding>
@@ -1768,8 +1770,8 @@
             <element signature="e#10515#10516#0" expanded="true" />
             <element signature="e#10560#10688#0" expanded="true" />
             <element signature="e#10681#10682#0" expanded="true" />
-            <element signature="e#13000#13001#0" expanded="true" />
-            <element signature="e#13051#13052#0" expanded="true" />
+            <element signature="e#13057#13058#0" expanded="true" />
+            <element signature="e#13108#13109#0" expanded="true" />
             <element signature="e#13947#13948#0" expanded="true" />
             <element signature="e#13974#13975#0" expanded="true" />
           </folding>
@@ -1841,8 +1843,8 @@
             <element signature="e#10515#10516#0" expanded="true" />
             <element signature="e#10560#10688#0" expanded="true" />
             <element signature="e#10681#10682#0" expanded="true" />
-            <element signature="e#13000#13001#0" expanded="true" />
-            <element signature="e#13051#13052#0" expanded="true" />
+            <element signature="e#13057#13058#0" expanded="true" />
+            <element signature="e#13108#13109#0" expanded="true" />
             <element signature="e#13947#13948#0" expanded="true" />
             <element signature="e#13974#13975#0" expanded="true" />
           </folding>
@@ -1939,8 +1941,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8802817" vertical-offset="5520" max-vertical-offset="6135">
-          <caret line="393" column="0" selection-start-line="393" selection-start-column="0" selection-end-line="393" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6126761" vertical-offset="5589" max-vertical-offset="6135">
+          <caret line="390" column="0" selection-start-line="390" selection-start-column="0" selection-end-line="390" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6020#6309#0" expanded="true" />
@@ -1959,8 +1961,8 @@
             <element signature="e#10515#10516#0" expanded="true" />
             <element signature="e#10560#10688#0" expanded="true" />
             <element signature="e#10681#10682#0" expanded="true" />
-            <element signature="e#13000#13001#0" expanded="true" />
-            <element signature="e#13051#13052#0" expanded="true" />
+            <element signature="e#13057#13058#0" expanded="true" />
+            <element signature="e#13108#13109#0" expanded="true" />
             <element signature="e#13947#13948#0" expanded="true" />
             <element signature="e#13974#13975#0" expanded="true" />
           </folding>
