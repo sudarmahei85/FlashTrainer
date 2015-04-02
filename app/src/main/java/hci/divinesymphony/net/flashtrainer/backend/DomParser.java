@@ -17,11 +17,12 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import hci.divinesymphony.net.flashtrainer.beans.Problem;
+import hci.divinesymphony.net.flashtrainer.beans.Reward;
 
 public class DomParser {
 
-    private final List questions = new ArrayList();
-    private final List rewards = new ArrayList();
+    private final List<Problem> questions = new ArrayList<Problem>();
+    private final List<Reward> rewards = new ArrayList<Reward>();
 	private Document dom;
     private final InputStream is;
 
@@ -32,7 +33,8 @@ public class DomParser {
     public DomParser(InputStream is) {
         this.is = is;
         this.parseXmlFile();
-        this.parseDocument();
+        this.parseDocumentProblem();
+        this.parseDocumentRewards();
     }
 
 /*
@@ -107,10 +109,10 @@ public class DomParser {
 							
 				Element el = (Element)nl.item(i);
 				
-				Rewards e = getRewards(el);
+				Reward reward = getReward(el);
 				
 				//add it to list
-				rewards.add(e);
+				rewards.add(reward);
 			}
 		}
 	}
@@ -135,13 +137,13 @@ public class DomParser {
 		return e;
 	}
 
-	private Rewards getRewards(Element El) {
+	private Reward getReward(Element El) {
 		
 		String sha1 = getTextValue(El,"sha1sum");
 		String guid = getTextValue(El, "guid");
-		Rewards e = new Rewards(sha1, guid);
+		Reward reward = new Reward(sha1, guid);
 		
-		return e;
+		return reward;
 	}
 
 	/**
