@@ -21,6 +21,7 @@ import hci.divinesymphony.net.flashtrainer.beans.Problem;
 public class DomParser {
 
     private final List questions = new ArrayList();
+    private final List rewards = new ArrayList();
 	private Document dom;
     private final InputStream is;
 
@@ -76,7 +77,7 @@ public class DomParser {
 		}
 	}
 
-	private void parseDocument(){
+	private void parseDocumentProblem(){
 		//get the root elememt
 		Element docEle = dom.getDocumentElement();
 		
@@ -91,6 +92,25 @@ public class DomParser {
 				
 				//add it to list
 				questions.add(e);
+			}
+		}
+	}
+	
+	private void parseDocumentRewards(){
+		//get the root elememt
+		Element docEle = dom.getDocumentElement();
+		
+		//get a nodelist of <Problem> elements
+		NodeList nl = docEle.getElementsByTagName("reward");
+		if(nl != null && nl.getLength() > 0) {
+			for(int i = 0 ; i < nl.getLength();i++) {
+							
+				Element el = (Element)nl.item(i);
+				
+				Rewards e = getRewards(el);
+				
+				//add it to list
+				rewards.add(e);
 			}
 		}
 	}
@@ -115,6 +135,14 @@ public class DomParser {
 		return e;
 	}
 
+	private Rewards getRewards(Element El) {
+		
+		String sha1 = getTextValue(El,"sha1sum");
+		String guid = getTextValue(El, "guid");
+		Rewards e = new Rewards(sha1, guid);
+		
+		return e;
+	}
 
 	/**
 	 * I take a xml element and the tag name, look for the tag and get
