@@ -4,7 +4,9 @@ import hci.divinesymphony.net.flashtrainer.backend.SampleProblemSet;
 import hci.divinesymphony.net.flashtrainer.backend.Selector;
 import hci.divinesymphony.net.flashtrainer.beans.ProblemSet;
 import hci.divinesymphony.net.flashtrainer.beans.DisplayItem;
+import hci.divinesymphony.net.flashtrainer.sync.BackgroundDownloader;
 import hci.divinesymphony.net.flashtrainer.sync.Client;
+import hci.divinesymphony.net.flashtrainer.sync.Downloader;
 import hci.divinesymphony.net.flashtrainer.util.SystemUiHider;
 
 import android.annotation.TargetApi;
@@ -194,7 +196,8 @@ public class Quiz extends Activity implements
         this.client = Client.initialize(this);
 
         //Kick off background downloads
-        //TODO - finish background download capability
+        BackgroundDownloader downloader = new BackgroundDownloader(this);
+        downloader.go();
 
         //Initialize with a real problem set
         this.populate_problem();

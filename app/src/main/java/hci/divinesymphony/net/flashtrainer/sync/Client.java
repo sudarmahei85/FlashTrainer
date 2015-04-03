@@ -2,6 +2,7 @@ package hci.divinesymphony.net.flashtrainer.sync;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Environment;
 
 import java.math.BigInteger;
 import java.util.UUID;
@@ -15,10 +16,15 @@ public class Client {
     private static final String KEY = "client_key";
     private static final String BASE_URL = "base_url";
 
+    private static final String MEDIA_PATH = Environment.getExternalStorageDirectory() + "/AuPAIR/media/";
+    private static final String TMP_PATH = Environment.getExternalStorageDirectory() + "/AuPAIR/tmp/";
+
+    /* The singleton */
     private static Client client;
 
     private final String clientKey;
     private final String baseUrl;
+
 
     public static Client initialize(Context ctx) {
         if (client == null) {
@@ -86,4 +92,19 @@ public class Client {
         return this.clientKey.substring(0,3)+'-'+this.clientKey.substring(4,7);
     }
 
+    /**
+     * Return the media path for the application
+     * @return media path for the application
+     */
+    public String getMediaPath() {
+        return MEDIA_PATH;
+    }
+
+    /**
+     * Return the temporary file path for the application
+     * @return temporary path for the application
+     */
+    public String getTmpPath() {
+        return TMP_PATH;
+    }
 }
