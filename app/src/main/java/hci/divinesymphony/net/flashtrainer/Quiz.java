@@ -4,10 +4,12 @@ import hci.divinesymphony.net.flashtrainer.backend.SampleProblemSet;
 import hci.divinesymphony.net.flashtrainer.backend.Selector;
 import hci.divinesymphony.net.flashtrainer.beans.ProblemSet;
 import hci.divinesymphony.net.flashtrainer.beans.DisplayItem;
+import hci.divinesymphony.net.flashtrainer.sync.Client;
 import hci.divinesymphony.net.flashtrainer.util.SystemUiHider;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -79,6 +81,7 @@ public class Quiz extends Activity implements
 
     private MediaPlayer mediaPlayer;
     private SurfaceView vidSurface;
+    private Client client;
 
     private View controlsView;
     private View contentView;
@@ -186,6 +189,12 @@ public class Quiz extends Activity implements
         this.mediaPlayer.setOnPreparedListener(this);
         this.mediaPlayer.setOnCompletionListener(this);
         this.mediaPlayer.setOnErrorListener(this);
+
+        //Initialize client preferences
+        this.client = Client.initialize(this);
+
+        //Kick off background downloads
+        //TODO - finish background download capability
 
         //Initialize with a real problem set
         this.populate_problem();
