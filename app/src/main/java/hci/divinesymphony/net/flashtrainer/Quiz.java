@@ -336,7 +336,7 @@ public class Quiz extends Activity implements
             this.playing = true;
         }
 
-        String vidFile = Client.getClient().getMediaPath()+'/'+this.reward.getFile();
+        String vidFile = Client.getClient().getMediaPath()+this.reward.getFile();
         Log.v(this.getClass().getName(), "attempting to play "+vidFile);
         try {
             FileInputStream is = new FileInputStream(vidFile);
