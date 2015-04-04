@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.IllegalFormatException;
 import java.util.Iterator;
 import java.util.List;
 
@@ -13,16 +14,18 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import hci.divinesymphony.net.flashtrainer.beans.DisplayItem;
 import hci.divinesymphony.net.flashtrainer.beans.Problem;
 import hci.divinesymphony.net.flashtrainer.beans.Reward;
 
 public class DomParser {
 
     private final List<Problem> questions = new ArrayList<Problem>();
-    private final List<Reward> rewards = new ArrayList<Reward>();
+    private final List<DisplayItem> rewards = new ArrayList<DisplayItem>();
 	private Document dom;
     private final InputStream is;
 
@@ -109,7 +112,7 @@ public class DomParser {
 							
 				Element el = (Element)nl.item(i);
 				
-				Reward reward = getReward(el);
+				DisplayItem reward = getReward(el);
 				
 				//add it to list
 				rewards.add(reward);
@@ -137,13 +140,30 @@ public class DomParser {
 		return e;
 	}
 
-	private Reward getReward(Element El) {
-		
-		String sha1 = getTextValue(El,"sha1sum");
-		String guid = getTextValue(El, "guid");
-		Reward reward = new Reward(sha1, guid);
-		
-		return reward;
+    private DisplayItem parseMultimediaTag(Element element) {
+        DisplayItem.MediaType type;
+        if ("video".equals(element.getTagName())) {
+            type = DisplayItem.MediaType.VIDEO;
+        } else if ("image".equals(element.getTagName())) {
+            type = DisplayItem.MediaType.IMAGE;
+        } else if ("sound".equals(element.getTagName())) {
+            type = DisplayItem.MediaType.SOUND;
+        } else {
+            throw new IllegalArgumentException("No recognized multimedia tag at this location");
+        }
+        String sha256 = getTextValue(element,"sha256sum");
+        String guid = getTextValue(element, "guid");
+        return new DisplayItem(type, null, null, guid, sha256);
+    }
+
+	private DisplayItem getReward(Element el) {
+        DisplayItem result = null;
+        Node node = el.getFirstChild();
+        if (node.getNodeType() == Node.ELEMENT_NODE) {
+            Element element = (Element) node;
+            result = parseMultimediaTag(element);
+        }
+        return result;
 	}
 
 	/**
