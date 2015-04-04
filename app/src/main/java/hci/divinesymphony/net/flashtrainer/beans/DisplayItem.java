@@ -11,9 +11,10 @@ public class DisplayItem {
     private final String file;
     private final MediaType type;
     private final String id;
+    private final String sha256;
 
     public DisplayItem(String text, String id) {
-        this(MediaType.TEXT, id, null, text);
+        this(MediaType.TEXT, id, text, null, null);
     }
 
     /**
@@ -23,13 +24,14 @@ public class DisplayItem {
      * @param file the file/guid from the xml file (required for non-text type)
      * @param text text description, if any (required for text type)
      */
-    public DisplayItem(DisplayItem.MediaType type, String id, String file, String text) {
+    public DisplayItem(DisplayItem.MediaType type, String id, String text, String file, String sha256) {
         this.type = type;
         this.file = file;
         this.id = id;
         this.text = text;
-        if ((type != MediaType.TEXT) && ( this.file == null||this.file.isEmpty()) ) {
-            throw new IllegalArgumentException("All display items but text must have a file present");
+        this.sha256 = sha256;
+        if ((type != MediaType.TEXT) && ( this.file == null||this.file.isEmpty() || this.sha256 == null|| this.sha256.isEmpty() )) {
+            throw new IllegalArgumentException("All display items but text must have a file and checksum present");
         }
     }
 
@@ -42,6 +44,8 @@ public class DisplayItem {
     }
 
     public String getFile() { return this.file; }
+
+    public String getSha256() { return this.getSha256(); }
 
     public boolean isVideo() { return this.type == MediaType.VIDEO; }
 
