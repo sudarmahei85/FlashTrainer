@@ -45,7 +45,7 @@ public class DisplayItem {
 
     public String getFile() { return this.file; }
 
-    public String getSha256() { return this.getSha256(); }
+    public String getSha256() { return this.sha256; }
 
     public boolean isVideo() { return this.type == MediaType.VIDEO; }
 
