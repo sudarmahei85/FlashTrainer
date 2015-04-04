@@ -1,6 +1,6 @@
 <appname_resource>
   <!-- the runtime mode; production or development alowed -->
-  <mode>development</mode>
+<!--  <mode>development</mode> -->
   <!-- the minimum interval between resource checks, in seconds
        web application enforces a 1 minute minimum (5 outside dev mode,
        and defaults to at least 30 minutes
@@ -15,32 +15,16 @@
        This should be one of our last deliverables in the Android client, as lack
        of this feature is not a deal breaker with devices not having a cellular radio
   -->
-  <download_control battery="true" wifi="true" mobile="false" />
+<!--  <download_control battery="true" wifi="true" mobile="false" /> -->
   <rewards>
     <!-- at initial program launch, and at least every checkpoint interval,
     client should attempt to download an updated version of this file -->
     <reward>
       <video>
-        <sha1sum>92e72b4f0dceb0b808519bc57f7718d7c0c481a4</sha1sum>
-    <guid>blah</guid>
-    <!--
-         when video sequence feature is in use, the client should save the
-         remaining parts of the reward locally so they are presented
-         in the correct order
-    
-         It would probably make sense to ignore a similar feature across multiple
-         resources, such as a progression of still photos, but I haven't yet
-         figured out a clean way to do that.  I was thinking a similar sequence
-         block around one or more reward elements, but that gets a bit messy...
-         good enough for now
-    -->
-    <sequences>
-      <sequence start="0" stop="90"/>
-      <sequence start="90" stop="110"/>
-      <sequence start="120" stop="147"/>
-        </sequences>
-      </video>
-    </reward>
+          <sha256sum>543a4ad9fef4c9e0004ec9482cb7225c2574b0f889291e8270b1c4d61dbc1ab8</sha256sum>
+          <guid>f13004eed4251c602bbe15737e8a1ecb</guid>
+        </video>
+      </reward>
     <!-- we may or may not need the codec type information.  I think there is a good
          chance the client can auto-detect these, if so, no need for type here, just
          a limit in the web part to only accept valid types for our spread of devices
@@ -48,15 +32,10 @@
     <!-- optional attribute enabled="0" prevents this reward from being used, but 
     still keeps it present on the device.  Important for large videos, etc. -->
     <reward>
-      <audio loop="true" delay="0">
-        <sha1sum>92e72b4f0dceb0b808519bc57f7718d7c0c481a4</sha1sum>
-    <guid>blah</guid>
-    <type>vorbis</type>
-      </audio>
       <image>
-        <sha1sum>92e72b4f0dceb0b808519bc57f7718d7c0c481a4</sha1sum>
-    <guid>blah</guid>
-    <type>png</type>
+        <sha256sum>92e72b4f0dceb0b808519bc57f7718d7c0c481a4</sha256sum>
+        <guid>blah</guid>
+        <type>png</type>
       </image>
     </reward>
   </rewards>
@@ -82,7 +61,6 @@
           Only one of text, audio, or image required, show sound icon if only audio
         -->
           <text>Turtle</text>
-          <audio>... Uses the same audio XML block from the reward section ...</audio>
           <image>... Uses the image XML block from the reward section ...</image>
 
       </problem>
