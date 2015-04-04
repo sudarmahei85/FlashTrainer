@@ -3,6 +3,7 @@ package hci.divinesymphony.net.flashtrainer.sync;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Environment;
+import android.util.Log;
 
 import java.math.BigInteger;
 import java.util.UUID;
@@ -16,8 +17,8 @@ public class Client {
     private static final String KEY = "client_key";
     private static final String BASE_URL = "base_url";
 
-    private static final String MEDIA_PATH = Environment.getExternalStorageDirectory() + "/AuPAIR/media/";
-    private static final String TMP_PATH = Environment.getExternalStorageDirectory() + "/AuPAIR/tmp/";
+    private static final String MEDIA_PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + "/AuPAIR/media/";
+    private static final String TMP_PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + "/AuPAIR/tmp/";
 
     /* The singleton */
     private static Client client;
@@ -73,6 +74,7 @@ public class Client {
      * @return the base URL
      */
     public String getBaseUrl() {
+        Log.v(this.getClass().getName(), "getBaseUrl() = "+this.baseUrl);
         return this.baseUrl;
     }
 
@@ -81,6 +83,7 @@ public class Client {
      * @return returns the unique client identifier
      * */
     public String getKey() {
+        Log.v(this.getClass().getName(), "getKey() = "+this.clientKey);
         return this.clientKey;
     }
 
@@ -89,7 +92,11 @@ public class Client {
      * @return a short version of the client identifier
      */
     public String getUserKey() {
-        return this.clientKey.substring(0,3)+'-'+this.clientKey.substring(4,7);
+//TODO - temporarily return the full key
+        String str = this.getKey();
+//        String str = this.clientKey.substring(0,3)+'-'+this.clientKey.substring(4,7);
+        Log.v(this.getClass().getName(), "getUserKey() = "+str);
+        return str;
     }
 
     /**
@@ -97,6 +104,7 @@ public class Client {
      * @return media path for the application
      */
     public String getMediaPath() {
+        Log.v(this.getClass().getName(), "getMediaPath() = "+MEDIA_PATH);
         return MEDIA_PATH;
     }
 
@@ -105,6 +113,7 @@ public class Client {
      * @return temporary path for the application
      */
     public String getTmpPath() {
+        Log.v(this.getClass().getName(), "getTmpPath() = "+TMP_PATH);
         return TMP_PATH;
     }
 }
