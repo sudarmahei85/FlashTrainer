@@ -66,16 +66,24 @@ public class Selector
     }
 
 
-    //TODO - return a random reward object form the XML file
-    public DisplayItem getReward() {
-        //get this list from the XML file instead - only using the url for now -- should be the value from the xml
-        //don't forget that we also need a way to fetch a List of all the files so the downloader can do it's thing
-        List<DisplayItem> rewards = new ArrayList<DisplayItem>(2);
-        rewards.add(new DisplayItem(DisplayItem.MediaType.VIDEO, "34", "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", "Big Buck Bunny"));
-        rewards.add(new DisplayItem(DisplayItem.MediaType.VIDEO, "92", "http://techslides.com/demos/sample-videos/small.mp4", "Random Sample"));
 
+    public DisplayItem getReward() {
+        List<DisplayItem> rewards = this.getRewards();
         int index = (int)( Math.random()*rewards.size() );
         return rewards.get(index);
+    }
+
+    //TODO - change this to parse from the XML file
+    public List<DisplayItem> getRewards() {
+        //get this list from the XML file instead - only using the url for now -- should be the value from the xml
+        //don't forget that we also need a way to fetch a List of all the files so the downloader can do it's thing
+        List<DisplayItem> rewards = new ArrayList<DisplayItem>();
+
+        rewards.add(new DisplayItem(DisplayItem.MediaType.VIDEO, "34", "Big Buck Bunny",
+                "f13004eed4251c602bbe15737e8a1ecb",
+                "543a4ad9fef4c9e0004ec9482cb7225c2574b0f889291e8270b1c4d61dbc1ab8"));
+
+        return rewards;
     }
 
     //TODO - The answer needs to be worked on, the parsing is missing Response object.

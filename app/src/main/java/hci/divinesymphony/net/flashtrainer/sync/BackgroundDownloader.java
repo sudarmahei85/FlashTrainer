@@ -13,10 +13,9 @@ public class BackgroundDownloader {
         this.context = ctx;
     }
 
-    //TODO - change this to a true background download capability
     public void go() {
-//        Downloader downloader = new Downloader(this.context);
-//        downloader.getMedia();
-//        downloader.getRewards();
+        Downloader downloader = new Downloader(this.context);
+        downloader.getMedia();
+        downloader.getRewards();
     }
 }

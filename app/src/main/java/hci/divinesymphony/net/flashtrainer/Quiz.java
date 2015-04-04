@@ -187,7 +187,6 @@ public class Quiz extends Activity implements
         this.mediaPlayer = new MediaPlayer();
 
         this.mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-        this.mediaPlayer.setScreenOnWhilePlaying(true);
         this.mediaPlayer.setOnPreparedListener(this);
         this.mediaPlayer.setOnCompletionListener(this);
         this.mediaPlayer.setOnErrorListener(this);
@@ -252,6 +251,7 @@ public class Quiz extends Activity implements
 
         //TODO this is currently crashing
         try {
+            //TODO - this needs to be changed to a downloaded copy
             InputStream is = this.getAssets().open("current.xml");
             Selector selector = new Selector(is);
             this.probSet = selector.getProblemSet();
@@ -336,30 +336,12 @@ public class Quiz extends Activity implements
             this.playing = true;
         }
 
-        //TODO - replace with reads from local files after downloader is finished
-
-        String vidUri = this.reward.getFile();
+        String vidFile = Client.getClient().getMediaPath()+'/'+this.reward.getFile();
+        Log.v(this.getClass().getName(), "attempting to play "+vidFile);
         try {
-//            AssetFileDescriptor descriptor = this.getAssets().openFd("mmch_intro.mp4");
-//            descriptor.getLength();
-//            mediaPlayer.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
-//            descriptor.close();
-
-/*
-            this.mediaPlayer = new MediaPlayer();
-
-            this.mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-            this.mediaPlayer.setScreenOnWhilePlaying(true);
-            this.mediaPlayer.setOnPreparedListener(this);
-            this.mediaPlayer.setOnCompletionListener(this);
-            this.mediaPlayer.setOnErrorListener(this);
-
-            this.mediaPlayer.setDisplay(this.vidSurface.getHolder());
-*/
-
-            this.mediaPlayer.setDataSource(vidUri);
+            FileInputStream is = new FileInputStream(vidFile);
+            this.mediaPlayer.setDataSource(is.getFD());
             this.mediaPlayer.prepare(); // might take long! (for buffering, etc)
-
         } catch (IOException e) {
             throw new RuntimeException(e);
             //intentionally do nothing, as we can't recover from a missing video other than immediately returning to the quiz
@@ -371,6 +353,7 @@ public class Quiz extends Activity implements
         try {
             Thread.sleep(4000);
         } catch (InterruptedException e) {
+            Log.w(this.getClass().getName(), "The punishment delay failed", e);
             //intentionally do nothing here.  If there is an interruption, the
             //punishment is just less severe and no real harm done
         }
@@ -379,11 +362,11 @@ public class Quiz extends Activity implements
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         this.mediaPlayer.setDisplay(holder);
+        this.mediaPlayer.setScreenOnWhilePlaying(true);
     }
 
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-//        this.mediaPlayer.setDisplay(holder);
     }
 
     @Override
