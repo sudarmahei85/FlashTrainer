@@ -19,9 +19,9 @@ public class BackgroundDownloader {
         downloader = new Downloader(this.context, Client.getClient().getConfigXML(this.context));
         downloader.getConfig();
 
-//        downloader = new Downloader(this.context, Client.getClient().getConfigXMLTemp(this.context));
-//        downloader.getRewards();
-//        downloader.getMedia();
+        downloader = new Downloader(this.context, Client.getClient().getConfigXMLTemp(this.context));
+        downloader.getRewards();
+        downloader.getMedia();
 
         //TODO - add error checking to make sure the previous steps complete without error
         downloader.enableConfig();

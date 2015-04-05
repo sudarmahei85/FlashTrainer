@@ -3,6 +3,7 @@ package hci.divinesymphony.net.flashtrainer.backend;
 
 
 import android.content.res.AssetManager;
+import android.util.Log;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -38,20 +39,19 @@ public class Selector
     private final ArrayList<Problem> questions = new ArrayList<Problem>();
     //private ArrayList<Response> answers = new ArrayList<Response>();
     private Queue<String> recentproblem = new LinkedList<String>();
-    private final InputStream is;
+    private final DomParser dom;
 
     public Selector(InputStream is) {
-        this.is = is;
+        this.dom = new DomParser(is);
     }
 
     // Five Random weight is got and then it's checked against the weight in problem list.
     // One problem is choosen, the id is added to queue to keep track of recent onces and the first one is remove when queue reaches size 10.
     public ProblemSet getProblemSet() {
         //boolean choosenProblem = false;
-        DomParser dom = new DomParser(this.is);
 
         List<Problem> weighted = new ArrayList();
-        for (Problem prob : dom.getQuestions()) {
+        for (Problem prob : this.dom.getQuestions()) {
             for (int i = prob.getWeight(); i > 0; i--) {
                 weighted.add(prob);
             }
@@ -73,17 +73,8 @@ public class Selector
         return rewards.get(index);
     }
 
-    //TODO - change this to parse from the XML file
     public List<DisplayItem> getRewards() {
-        List<DisplayItem> rewards = new ArrayList<DisplayItem>();
-
-        rewards.add(new DisplayItem(DisplayItem.MediaType.VIDEO, "34", "Big Buck Bunny",
-                "f13004eed4251c602bbe15737e8a1ecb",
-                "543a4ad9fef4c9e0004ec9482cb7225c2574b0f889291e8270b1c4d61dbc1ab8"));
-
-        return rewards;
-//        DomParser dom = new DomParser(this.is);
-//        return dom.getRewards();
+        return this.dom.getRewards();
     }
 
     //TODO - The answer needs to be worked on, the parsing is missing Response object.

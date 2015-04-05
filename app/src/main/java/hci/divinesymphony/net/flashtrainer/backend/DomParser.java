@@ -164,13 +164,21 @@ public class DomParser {
 
 	private DisplayItem getReward(Element el) {
         DisplayItem result = null;
-        Node node = el.getFirstChild();
-        if (node.getNodeType() == Node.ELEMENT_NODE) {
+
+        NodeList nodes = el.getChildNodes();
+        Element node = null;
+        for (int i=nodes.getLength()-1; i >= 0; i-- ) {
+            Node tmpNode = nodes.item(i);
+            if (tmpNode.getNodeType() == Node.ELEMENT_NODE) {
+                node = (Element) tmpNode;
+            }
+        }
+
+        if (node != null) {
             Log.v(this.getClass().getName(), "Attempting to parse a multimedia element");
-            Element element = (Element) node;
-            result = parseMultimediaTag(element);
+            result = parseMultimediaTag(node);
         } else {
-            Log.v(this.getClass().getName(), "Skipping, not an element");
+            Log.w(this.getClass().getName(), "Skipping, not an element");
         }
         return result;
 	}
