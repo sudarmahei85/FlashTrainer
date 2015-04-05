@@ -75,8 +75,6 @@ public class Selector
 
     //TODO - change this to parse from the XML file
     public List<DisplayItem> getRewards() {
-        //get this list from the XML file instead - only using the url for now -- should be the value from the xml
-        //don't forget that we also need a way to fetch a List of all the files so the downloader can do it's thing
         List<DisplayItem> rewards = new ArrayList<DisplayItem>();
 
         rewards.add(new DisplayItem(DisplayItem.MediaType.VIDEO, "34", "Big Buck Bunny",
@@ -84,6 +82,8 @@ public class Selector
                 "543a4ad9fef4c9e0004ec9482cb7225c2574b0f889291e8270b1c4d61dbc1ab8"));
 
         return rewards;
+//        DomParser dom = new DomParser(this.is);
+//        return dom.getRewards();
     }
 
     //TODO - The answer needs to be worked on, the parsing is missing Response object.

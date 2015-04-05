@@ -249,16 +249,14 @@ public class Quiz extends Activity implements
         //TODO replace this line with a call providing a randomly selected problem set
         this.probSet = SampleProblemSet.getSample();
 
-        //TODO this is currently crashing
-        try {
-            //TODO - this needs to be changed to a downloaded copy
-            InputStream is = this.getAssets().open("current.xml");
+//        try {
+            InputStream is = Client.getClient().getConfigXML(this);
             Selector selector = new Selector(is);
             this.probSet = selector.getProblemSet();
             this.reward = selector.getReward();
-        } catch (IOException e) {
-            throw new RuntimeException("Don't yet know how to handle error reporting at this stage", e);
-        }
+//        } catch (IOException e) {
+//            throw new RuntimeException("Don't yet know how to handle error reporting at this stage", e);
+//        }
 
 
         DisplayItem problem = probSet.getProblem();

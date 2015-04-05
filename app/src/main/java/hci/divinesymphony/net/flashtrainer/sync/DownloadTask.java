@@ -48,13 +48,8 @@ public class DownloadTask extends AsyncTask<DisplayItem, Integer, Long> {
         int failure = 0;
         for (DisplayItem item : resources) {
             try {
-                //TODO - this is a temporary hack to confirm downloads work without access to our server
-                URL url;
-                if ( item.getFile().startsWith("http://") || item.getFile().startsWith("https://") ) {
-                    url = new URL(item.getFile());
-                } else {
-                    url = new URL(Client.getClient().getBaseUrl() + item.getFile());
-                }
+                Log.v(this.getClass().getName(), "URL to download: "+item.getUrl());
+                URL url = new URL(item.getUrl());
                 HttpURLConnection c = (HttpURLConnection) url.openConnection();
                 c.setRequestMethod("GET");
                 c.setDoOutput(true);
@@ -83,7 +78,7 @@ public class DownloadTask extends AsyncTask<DisplayItem, Integer, Long> {
                 //verify the download
                 CheckSum sum = new Sha256Sum();
                 String calc = sum.hashString(new BufferedInputStream(new FileInputStream(outputFile)));
-                boolean valid = calc.equals(item.getSha256());
+                boolean valid = item.getSha256() == null ? true : calc.equals(item.getSha256());
 
                 File newFile = new File(mediaDir, item.getFile());
 
@@ -92,7 +87,10 @@ public class DownloadTask extends AsyncTask<DisplayItem, Integer, Long> {
                     outputFile.renameTo(newFile);
                     Log.d(this.getClass().getName(), "Download verified and finalized");
                 } else {
-                    Log.d(this.getClass().getName(), "Download failed verification");
+                    Log.w(this.getClass().getName(), "Download failed verification");
+                    Log.v(this.getClass().getName(), "Calculated hash: "+calc);
+                    Log.v(this.getClass().getName(), "Expected hash: "+item.getSha256());
+
                     outputFile.delete();
                     Log.d(this.getClass().getName(), "Temporary file deleted");
                     failure++;

@@ -14,8 +14,17 @@ public class BackgroundDownloader {
     }
 
     public void go() {
-        Downloader downloader = new Downloader(this.context);
-        downloader.getMedia();
-        downloader.getRewards();
+        Downloader downloader;
+
+        downloader = new Downloader(this.context, Client.getClient().getConfigXML(this.context));
+        downloader.getConfig();
+
+//        downloader = new Downloader(this.context, Client.getClient().getConfigXMLTemp(this.context));
+//        downloader.getRewards();
+//        downloader.getMedia();
+
+        //TODO - add error checking to make sure the previous steps complete without error
+        downloader.enableConfig();
+
     }
 }

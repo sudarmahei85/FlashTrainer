@@ -6,6 +6,7 @@ import android.util.Log;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -20,20 +21,30 @@ public class Downloader {
     private final Context context;
     private final Selector selector;
 
+
     /**
      * Create a new downloader object
      * @param ctx the context of the application
      */
-    public Downloader(Context ctx) {
+    public Downloader(Context ctx, InputStream is) {
         this.context = ctx;
-        //TODO - make this download from a new, non-active copy of the XML instead
-        try {
-            InputStream is = this.context.getAssets().open("current.xml");
-            this.selector = new Selector(is);
-        } catch (IOException e) {
-            Log.e(this.getClass().getName(), "Unable to read xml file");
-            throw new RuntimeException("Unable to read xml file", e);
-        }
+        this.selector = new Selector(is);
+    }
+
+    /**
+     * Download the configuration
+     */
+    public void getConfig() {
+        DownloadTask downloadTask = new DownloadTask(this.context);
+        List<DisplayItem> list = new ArrayList<DisplayItem>(1);
+        list.add(DisplayItem.getConfig());
+        downloadTask.execute( list.toArray(new DisplayItem[0]) );
+    }
+
+    public void enableConfig() {
+        File newConfig = new File(Client.getClient().getMediaPath()+Client.getClient().getKey());
+        File liveConfig = new File(Client.getClient().getMediaPath()+"current.xml");
+        newConfig.renameTo(liveConfig);
     }
 
     /**
