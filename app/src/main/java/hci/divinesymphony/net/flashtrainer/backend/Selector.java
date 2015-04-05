@@ -58,11 +58,9 @@ public class Selector
         }
 
         int index = (int)( Math.random()*weighted.size() );
-
         Problem problem = weighted.get(index);
-        DisplayItem disproblem = new DisplayItem(problem.getText(), problem.getprobID());
 
-        return new ProblemSet(disproblem, answerChoice(problem));
+        return new ProblemSet(problem.getContent(), answerChoice(problem));
     }
 
 
@@ -76,6 +74,11 @@ public class Selector
     public List<DisplayItem> getRewards() {
         return this.dom.getRewards();
     }
+
+    public List<DisplayItem> getMedia() {
+        return this.dom.getMedia();
+    }
+
 
     //TODO - The answer needs to be worked on, the parsing is missing Response object.
     public List<DisplayItem> answerChoice(Problem problem)

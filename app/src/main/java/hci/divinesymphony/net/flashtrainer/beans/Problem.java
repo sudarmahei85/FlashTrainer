@@ -6,80 +6,20 @@ import java.lang.StringBuffer;
 
 public class Problem {
 
-	private String text;
-
-	private String audio;
+	private final int weight;
+    private final DisplayItem item;
 	
-	private String image;
-		
-	private String probID;
-	
-	private int weight;
-	
-	public Problem(){
-		
-	}
-	
-	public Problem(String text, String audio, String image,String probID, int weight) {
-		this.text = text;
-		this.audio = audio;
-		this.image  = image;
-		this.probID  = probID;
-		this.weight  = weight;
-		
-	}
-	public String getText() {
-		return text;
-	}
-
-	public void setText(String text) {
-		this.text = text;
-	}
-
-	public String getAudio() {
-		return audio;
-	}
-
-	public void setName(String audio) {
-		this.audio = audio;
-	}
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}	
-
-	public String getprobID() {
-		return probID;
-	}
-
-	public void setprobID(String probID) {
-		this.probID = probID;
-	}	
-	
-	public int getWeight() {
-		return weight;
-	}
-
-	public void setWeight(int weight) {
+	public Problem(DisplayItem item, int weight) {
+		this.item = item;
 		this.weight = weight;
 	}
-	
-	public String toString() {
-		StringBuffer sb = new StringBuffer();
-		sb.append("Problem: " + getText());
-		sb.append("\n");
-		sb.append("Audio: " + getAudio());
-		sb.append("\n");
-		sb.append("Image:" + getImage());
-		sb.append("\n");
-		sb.append("Prob ID: " + getprobID());
-		sb.append("\n");
-		sb.append("Weight: " + getWeight());
-		
-		return sb.toString();
+
+    public DisplayItem getContent() {
+        return this.item;
+    }
+
+	public int getWeight() {
+		return this.weight;
 	}
+
 }

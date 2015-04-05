@@ -63,7 +63,8 @@ public class Downloader {
     public void getMedia() {
         DownloadTask downloadTask = new DownloadTask(this.context);
         //TODO - make this read from a specified XML file instead of the hard-coded example
-        List<DisplayItem> list = new LinkedList<DisplayItem>();
+//        List<DisplayItem> list = new LinkedList<DisplayItem>();
+        List<DisplayItem> list = this.selector.getMedia();
         list = pruneCached(list); //filter out the stuff currently cached
         downloadTask.execute(list.toArray(new DisplayItem[0]));
     }

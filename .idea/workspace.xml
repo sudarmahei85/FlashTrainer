@@ -19,8 +19,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9920c6cc-d780-4ea0-bb68-31ec61988720" name="Default" comment="Widespread background downloading work.">
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Responses.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/BackgroundDownloader.java" afterPath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/BackgroundDownloader.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Reward.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/DomParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/DomParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Downloader.java" afterPath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Downloader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Problem.java" afterPath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Problem.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/Selector.java" afterPath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/Selector.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -50,16 +52,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Selector.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Quiz.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3644" max-vertical-offset="5535">
+              <caret line="266" column="41" selection-start-line="266" selection-start-column="41" selection-end-line="266" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProblemSet.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/ProblemSet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Selector.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/Selector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19741698" vertical-offset="613" max-vertical-offset="1155">
-              <caret line="70" column="54" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="488" max-vertical-offset="1170">
+              <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
               <folding>
-                <element signature="e#1166#1167#0" expanded="true" />
-                <element signature="e#1210#1211#0" expanded="true" />
-                <element signature="e#2261#2262#0" expanded="true" />
-                <element signature="e#2305#2306#0" expanded="true" />
+                <element signature="e#2180#2181#0" expanded="true" />
+                <element signature="e#2224#2225#0" expanded="true" />
+                <element signature="e#2267#2268#0" expanded="true" />
+                <element signature="e#2309#2310#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Problem.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Problem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding>
+                <element signature="e#331#332#0" expanded="true" />
+                <element signature="e#363#364#0" expanded="true" />
+                <element signature="e#390#391#0" expanded="true" />
+                <element signature="e#415#416#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,39 +107,27 @@
       <file leaf-file-name="DomParser.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/DomParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="3600">
-              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="764" max-vertical-offset="4005">
+              <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#943#956#0" expanded="true" />
-                <element signature="e#5411#5412#0" expanded="true" />
-                <element signature="e#5476#5477#0" expanded="true" />
+                <element signature="e#886#899#0" expanded="true" />
+                <element signature="e#1765#1778#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Downloader.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Downloader.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Downloader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1335">
-              <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.7855856" vertical-offset="674" max-vertical-offset="1350">
+              <caret line="74" column="39" selection-start-line="74" selection-start-column="39" selection-end-line="74" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#957#970#0" expanded="true" />
-                <element signature="e#2050#2063#0" expanded="true" />
-                <element signature="e#2330#2343#0" expanded="true" />
+                <element signature="e#2391#2404#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BackgroundDownloader.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/BackgroundDownloader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="510">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -975,7 +1002,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Problem.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_quiz.xml" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/Reward.java" />
@@ -988,13 +1014,14 @@
         <option value="$PROJECT_DIR$/app/src/main/assets/current.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/CheckSum.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Sha256Sum.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/DisplayItem.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/DownloadTask.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Downloader.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Client.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/DomParser.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/BackgroundDownloader.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/DisplayItem.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Problem.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/DomParser.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Downloader.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/Selector.java" />
       </list>
     </option>
@@ -1747,7 +1774,11 @@
       <created>1428194115340</created>
       <updated>1428194115340</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Rewards parsing is now implemented.">
+      <created>1428225790593</created>
+      <updated>1428225790593</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1820,7 +1851,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Minor UI refinements, addition of another example to our sample XML, and some more rewards handling work." />
     <MESSAGE value="After about 90 code revisions, we can now play multiple rewards without crashing the application.  Yay (really though, this API sucks)!" />
     <MESSAGE value="Fix stuck video image requiring a click to get back to menu." />
     <MESSAGE value="Built a stub class for providing a random reward.  Added multimedia displayItem support." />
@@ -1845,20 +1875,13 @@
     <MESSAGE value="Added a new config type, that can download files without having checksums.  Also, helper function to determine the fetch URL based on type." />
     <MESSAGE value="This function is broken, and not providing correct data.  Added some debugging, and checks to prevent the bad data from breaking other portions of the application." />
     <MESSAGE value="Various work relating to downloading from the real servers, hash verification debugging, etc." />
-    <option name="LAST_COMMIT_MESSAGE" value="Various work relating to downloading from the real servers, hash verification debugging, etc." />
+    <MESSAGE value="Rewards parsing is now implemented." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rewards parsing is now implemented." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Reward.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="510">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6180">
@@ -1882,10 +1905,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="1185">
           <caret line="71" column="115" selection-start-line="71" selection-start-column="115" selection-end-line="71" selection-end-column="115" />
           <folding>
-            <element signature="e#1166#1167#0" expanded="true" />
-            <element signature="e#1210#1211#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
-            <element signature="e#2305#2306#0" expanded="true" />
+            <element signature="e#2180#2181#0" expanded="true" />
+            <element signature="e#2224#2225#0" expanded="true" />
+            <element signature="e#2267#2268#0" expanded="true" />
+            <element signature="e#2309#2310#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1902,10 +1925,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="1770">
           <caret line="53" column="2" selection-start-line="53" selection-start-column="2" selection-end-line="53" selection-end-column="2" />
           <folding>
-            <element signature="e#1166#1167#0" expanded="true" />
-            <element signature="e#1210#1211#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
-            <element signature="e#2305#2306#0" expanded="true" />
+            <element signature="e#2180#2181#0" expanded="true" />
+            <element signature="e#2224#2225#0" expanded="true" />
+            <element signature="e#2267#2268#0" expanded="true" />
+            <element signature="e#2309#2310#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1943,9 +1966,8 @@
           <caret line="45" column="53" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#943#956#0" expanded="true" />
-            <element signature="e#5411#5412#0" expanded="true" />
-            <element signature="e#5476#5477#0" expanded="true" />
+            <element signature="e#886#899#0" expanded="true" />
+            <element signature="e#1765#1778#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1962,10 +1984,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1770">
           <caret line="53" column="2" selection-start-line="53" selection-start-column="2" selection-end-line="53" selection-end-column="2" />
           <folding>
-            <element signature="e#1166#1167#0" expanded="true" />
-            <element signature="e#1210#1211#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
-            <element signature="e#2305#2306#0" expanded="true" />
+            <element signature="e#2180#2181#0" expanded="true" />
+            <element signature="e#2224#2225#0" expanded="true" />
+            <element signature="e#2267#2268#0" expanded="true" />
+            <element signature="e#2309#2310#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1996,9 +2018,8 @@
           <caret line="45" column="53" selection-start-line="45" selection-start-column="53" selection-end-line="45" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#943#956#0" expanded="true" />
-            <element signature="e#5411#5412#0" expanded="true" />
-            <element signature="e#5476#5477#0" expanded="true" />
+            <element signature="e#886#899#0" expanded="true" />
+            <element signature="e#1765#1778#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2015,10 +2036,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1007" max-vertical-offset="1740">
           <caret line="81" column="65" selection-start-line="81" selection-start-column="65" selection-end-line="81" selection-end-column="65" />
           <folding>
-            <element signature="e#1166#1167#0" expanded="true" />
-            <element signature="e#1210#1211#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
-            <element signature="e#2305#2306#0" expanded="true" />
+            <element signature="e#2180#2181#0" expanded="true" />
+            <element signature="e#2224#2225#0" expanded="true" />
+            <element signature="e#2267#2268#0" expanded="true" />
+            <element signature="e#2309#2310#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2039,9 +2060,8 @@
           <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#943#956#0" expanded="true" />
-            <element signature="e#5411#5412#0" expanded="true" />
-            <element signature="e#5476#5477#0" expanded="true" />
+            <element signature="e#886#899#0" expanded="true" />
+            <element signature="e#1765#1778#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2179,30 +2199,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/ProblemSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Problem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1050">
-          <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Reward.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/CheckSum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
@@ -2218,14 +2214,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/DisplayItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="97" max-vertical-offset="1110">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2253,59 +2241,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/DomParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="3600">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#943#956#0" expanded="true" />
-            <element signature="e#5411#5412#0" expanded="true" />
-            <element signature="e#5476#5477#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Downloader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1335">
-          <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#957#970#0" expanded="true" />
-            <element signature="e#2050#2063#0" expanded="true" />
-            <element signature="e#2330#2343#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/BackgroundDownloader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="510">
+        <state vertical-scroll-proportion="0.6756757" vertical-offset="0" max-vertical-offset="555">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/current.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1950">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65767634" vertical-offset="5053" max-vertical-offset="5535">
-          <caret line="392" column="5" selection-start-line="392" selection-start-column="5" selection-end-line="392" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3644" max-vertical-offset="5535">
+          <caret line="266" column="41" selection-start-line="266" selection-start-column="41" selection-end-line="266" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/ProblemSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Problem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
+            <element signature="e#415#416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/DomParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="764" max-vertical-offset="4005">
+          <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#886#899#0" expanded="true" />
+            <element signature="e#1765#1778#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/DisplayItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7780083" vertical-offset="0" max-vertical-offset="1110">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/Selector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19741698" vertical-offset="613" max-vertical-offset="1155">
-          <caret line="70" column="54" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="488" max-vertical-offset="1170">
+          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
           <folding>
-            <element signature="e#1166#1167#0" expanded="true" />
-            <element signature="e#1210#1211#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
-            <element signature="e#2305#2306#0" expanded="true" />
+            <element signature="e#2180#2181#0" expanded="true" />
+            <element signature="e#2224#2225#0" expanded="true" />
+            <element signature="e#2267#2268#0" expanded="true" />
+            <element signature="e#2309#2310#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Downloader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7855856" vertical-offset="674" max-vertical-offset="1350">
+          <caret line="74" column="39" selection-start-line="74" selection-start-column="39" selection-end-line="74" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#957#970#0" expanded="true" />
+            <element signature="e#2391#2404#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -23,7 +23,6 @@ import org.xml.sax.SAXException;
 
 import hci.divinesymphony.net.flashtrainer.beans.DisplayItem;
 import hci.divinesymphony.net.flashtrainer.beans.Problem;
-import hci.divinesymphony.net.flashtrainer.beans.Reward;
 
 public class DomParser {
 
@@ -64,6 +63,16 @@ public class DomParser {
 
         return this.questions;
     }
+
+    public List<DisplayItem> getMedia() {
+        List<DisplayItem> list = new ArrayList<DisplayItem>(this.questions.size());
+        for (Problem question : this.questions) {
+            list.add(question.getContent());
+        }
+        return list;
+    }
+
+
 	//Taken from http://www.java-samples.com/showtutorial.php?tutorialid=152
 	private void parseXmlFile(){
 		//get the factory
@@ -116,37 +125,57 @@ public class DomParser {
 				Element el = (Element)nl.item(i);
 				
 				DisplayItem reward = getReward(el);
-				
-				//add it to list
-                //TODO - fix the condition that's allowing null rewards
-                if (reward != null) {
-                    rewards.add(reward);
-                }
+
+                rewards.add(reward);
 			}
 		}
 	}
 
 	private Problem getProblem(Element El) {
-		
-		//for each <problem> element get text or int values of 
-		//name ,id, age and name
-		String text = getTextValue(El,"text");
-		//String probIDs = getTextValue(El,"probIDs");
-		String audio = getTextValue(El,"audio");
-		String image = getTextValue(El,"image");
+        DisplayItem item;
 
-		String probID = El.getAttribute("probid");
-		
-		int weight = Integer.parseInt(El.getAttribute("weight"));
-		
-		
-		//Create a new Problem with the value read from the xml nodes
-		Problem e = new Problem(text,audio,image,probID,weight);
-		
-		return e;
+        //parse misc items
+        String probID = El.getAttribute("probid");
+        int weight = Integer.parseInt(El.getAttribute("weight"));
+
+        //parse the text description
+        String text = getTextValue(El,"text");
+        if (text != null && text.isEmpty()) {
+            text = null;
+        }
+        //parse the multimedia content
+        Element element = findChildByTagName(El, "image");
+        if (element != null) {
+            item = this.parseMultimediaTag(element, text, probID);
+        } else {
+            item = new DisplayItem(text, probID);
+        }
+
+		return new Problem(item, weight);
 	}
 
+    private Element findChildByTagName(Element parent, String tagName) {
+        NodeList nodes = parent.getChildNodes();
+        Element node = null;
+        for (int i=nodes.getLength()-1; i >= 0; i-- ) {
+            Node tmpNode = nodes.item(i);
+            if (tmpNode.getNodeType() == Node.ELEMENT_NODE) {
+                node = (Element) tmpNode;
+                if (tagName.equals(node.getTagName())) {
+                    break;
+                } else {
+                    node = null;
+                }
+            }
+        }
+        return node;
+    }
+
     private DisplayItem parseMultimediaTag(Element element) {
+        return this.parseMultimediaTag(element, null, null);
+    }
+
+    private DisplayItem parseMultimediaTag(Element element, String text, String id) {
         DisplayItem.MediaType type;
         if ("video".equals(element.getTagName())) {
             type = DisplayItem.MediaType.VIDEO;
@@ -159,7 +188,7 @@ public class DomParser {
         }
         String sha256 = getTextValue(element,"sha256sum");
         String guid = getTextValue(element, "guid");
-        return new DisplayItem(type, null, null, guid, sha256);
+        return new DisplayItem(type, id, text, guid, sha256);
     }
 
 	private DisplayItem getReward(Element el) {
