@@ -16,11 +16,6 @@ public class Sha256Sum extends CheckSum {
         this.bufferSize = 1024;
     }
 
-    public String hashString(InputStream is) {
-        byte[] raw = hashByte(is);
-        return raw.toString();
-    }
-
     public byte[] hashByte(InputStream is) {
         MessageDigest digest;
         try {
