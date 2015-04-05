@@ -246,18 +246,10 @@ public class Quiz extends Activity implements
     }
 
     private void populate_problem() {
-        //TODO replace this line with a call providing a randomly selected problem set
-        this.probSet = SampleProblemSet.getSample();
-
-//        try {
-            InputStream is = Client.getClient().getConfigXML(this);
-            Selector selector = new Selector(is);
-            this.probSet = selector.getProblemSet();
-            this.reward = selector.getReward();
-//        } catch (IOException e) {
-//            throw new RuntimeException("Don't yet know how to handle error reporting at this stage", e);
-//        }
-
+        InputStream is = Client.getClient().getConfigXML(this);
+        Selector selector = new Selector(is);
+        this.probSet = selector.getProblemSet();
+        this.reward = selector.getReward();
 
         DisplayItem problem = probSet.getProblem();
         List<DisplayItem> responses = probSet.getResponses();
