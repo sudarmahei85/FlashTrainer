@@ -1,9 +1,12 @@
 package hci.divinesymphony.net.flashtrainer.backend;
 
+import android.util.Log;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.IllegalFormatException;
 import java.util.Iterator;
 import java.util.List;
@@ -115,7 +118,10 @@ public class DomParser {
 				DisplayItem reward = getReward(el);
 				
 				//add it to list
-				rewards.add(reward);
+                //TODO - fix the condition that's allowing null rewards
+                if (reward != null) {
+                    rewards.add(reward);
+                }
 			}
 		}
 	}
@@ -160,11 +166,18 @@ public class DomParser {
         DisplayItem result = null;
         Node node = el.getFirstChild();
         if (node.getNodeType() == Node.ELEMENT_NODE) {
+            Log.v(this.getClass().getName(), "Attempting to parse a multimedia element");
             Element element = (Element) node;
             result = parseMultimediaTag(element);
+        } else {
+            Log.v(this.getClass().getName(), "Skipping, not an element");
         }
         return result;
 	}
+
+    public List<DisplayItem> getRewards() {
+        return Collections.unmodifiableList(this.rewards);
+    }
 
 	/**
 	 * I take a xml element and the tag name, look for the tag and get
