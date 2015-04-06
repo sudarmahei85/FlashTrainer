@@ -25,19 +25,6 @@
           <guid>f13004eed4251c602bbe15737e8a1ecb</guid>
         </video>
       </reward>
-    <!-- we may or may not need the codec type information.  I think there is a good
-         chance the client can auto-detect these, if so, no need for type here, just
-         a limit in the web part to only accept valid types for our spread of devices
-    -->
-    <!-- optional attribute enabled="0" prevents this reward from being used, but 
-    still keeps it present on the device.  Important for large videos, etc. -->
-    <reward>
-      <image>
-        <sha256sum>92e72b4f0dceb0b808519bc57f7718d7c0c481a4</sha256sum>
-        <guid>blah</guid>
-        <type>png</type>
-      </image>
-    </reward>
   </rewards>
   
 
@@ -61,7 +48,6 @@
           Only one of text, audio, or image required, show sound icon if only audio
         -->
           <text>Turtle</text>
-          <image>... Uses the image XML block from the reward section ...</image>
 
       </problem>
       <problem probid="2" weight="1">
