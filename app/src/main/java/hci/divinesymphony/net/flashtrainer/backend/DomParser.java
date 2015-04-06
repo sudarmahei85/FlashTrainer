@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.IllegalFormatException;
 import java.util.Iterator;
 import java.util.List;
@@ -23,11 +24,13 @@ import org.xml.sax.SAXException;
 
 import hci.divinesymphony.net.flashtrainer.beans.DisplayItem;
 import hci.divinesymphony.net.flashtrainer.beans.Problem;
+import hci.divinesymphony.net.flashtrainer.beans.Responses;
 
 public class DomParser {
 
     private final List<Problem> questions = new ArrayList<Problem>();
     private final List<DisplayItem> rewards = new ArrayList<DisplayItem>();
+    private final List<Responses> responseslist = new ArrayList<Responses>();
 	private Document dom;
     private final InputStream is;
 
@@ -40,6 +43,7 @@ public class DomParser {
         this.parseXmlFile();
         this.parseDocumentProblem();
         this.parseDocumentRewards();
+        this.parseDocumentResponses();
     }
 
 /*
@@ -72,8 +76,11 @@ public class DomParser {
         return list;
     }
 
+    public List<Responses> getResponseslist() {
+        return responseslist;
+    }
 
-	//Taken from http://www.java-samples.com/showtutorial.php?tutorialid=152
+    //Taken from http://www.java-samples.com/showtutorial.php?tutorialid=152
 	private void parseXmlFile(){
 		//get the factory
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -137,6 +144,12 @@ public class DomParser {
         //parse misc items
         String probID = El.getAttribute("probid");
         int weight = Integer.parseInt(El.getAttribute("weight"));
+        NodeList nl = El.getElementsByTagName("responses");
+        Element prresponses = (Element)nl.item(0);
+        NodeList n  = prresponses.getElementsByTagName("response");
+        Element prresponse = (Element)n.item(0);
+        Integer answerdId=Integer.parseInt(prresponse.getAttribute("answer"));
+        Integer groupId=Integer.parseInt(prresponse.getAttribute("group"));
 
         //parse the text description
         String text = getTextValue(El,"text");
@@ -151,7 +164,7 @@ public class DomParser {
             item = new DisplayItem(text, probID);
         }
 
-		return new Problem(item, weight);
+		return new Problem(item, weight,answerdId,groupId);
 	}
 
     private Element findChildByTagName(Element parent, String tagName) {
@@ -235,6 +248,28 @@ public class DomParser {
 
 		return textVal;
 	}
+    private void parseDocumentResponses(){
+        //get the root elememt
+        Element docEle = dom.getDocumentElement();
+        NodeList nl = docEle.getElementsByTagName("group");
+        if(nl != null && nl.getLength() > 0) {
+            for(int i = 0 ; i < nl.getLength();i++) {
+                Element elresponse = (Element)nl.item(i);
+                NodeList n  = elresponse.getElementsByTagName("item");
+                HashMap<Integer,String> response = new HashMap<>();
+                for(int j = 0 ; j < n.getLength();j++) {
+                    Element items = (Element)n.item(j);
+                    response.put(Integer.parseInt(items.getAttribute("id")), items.getElementsByTagName("text").item(0).getTextContent());
+                }
+                Responses e = new Responses(elresponse.getAttribute("name"),Integer.parseInt(elresponse.getAttribute("id")),response);
+
+                responseslist.add(e);
+
+            }
+        }
+    }
+
+
 
     /**
 	 * Iterate through the list and print the 
