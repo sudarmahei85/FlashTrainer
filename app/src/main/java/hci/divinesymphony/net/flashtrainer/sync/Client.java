@@ -171,6 +171,8 @@ public class Client {
                 OutputStream out;
                 try {
                     template = ctx.getAssets().open("current.xml");
+                    configFile.getParentFile().mkdirs();
+
                     out = new FileOutputStream(configFile);
                     byte[] buffer = new byte[1024];
                     int len = template.read(buffer);
