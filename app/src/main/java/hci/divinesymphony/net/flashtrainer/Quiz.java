@@ -25,6 +25,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.view.View.OnClickListener;
+import android.widget.ImageButton;
 import android.widget.VideoView;
 
 import java.io.FileInputStream;
@@ -76,6 +77,7 @@ public class Quiz extends Activity implements
     private DisplayItem reward;
 
     private Button btn_problem;
+    private ImageButton btn_problem_img;
     private Button btn_0;
     private Button btn_1;
     private Button btn_2;
@@ -99,6 +101,7 @@ public class Quiz extends Activity implements
 
         //locate the button controls and save for later
         this.btn_problem = ((Button)findViewById(R.id.btn_problem));
+        this.btn_problem_img = ((ImageButton)findViewById(R.id.btn_problem_img));
         this.btn_0 = ((Button)findViewById(R.id.btn_0));
         this.btn_1 = ((Button)findViewById(R.id.btn_1));
         this.btn_2 = ((Button)findViewById(R.id.btn_2));
@@ -254,9 +257,15 @@ public class Quiz extends Activity implements
         DisplayItem problem = probSet.getProblem();
         List<DisplayItem> responses = probSet.getResponses();
 
-        //fill in problem info from the provided problem set
-        //TODO add image support
         this.btn_problem.setText(problem.getText());
+        if (problem.isImage()) {
+            this.btn_problem_img.setImageURI(problem.getLocalUri());
+            this.btn_problem_img.setVisibility(View.VISIBLE);
+            this.btn_problem.setVisibility(View.GONE);
+        } else {
+            this.btn_problem_img.setVisibility(View.GONE);
+            this.btn_problem.setVisibility(View.VISIBLE);
+        }
 
         //fill in responses
         this.btn_0.setText(responses.get(0).getText());

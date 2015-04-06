@@ -1,5 +1,9 @@
 package hci.divinesymphony.net.flashtrainer.beans;
 
+import android.net.Uri;
+
+import java.net.URI;
+
 import hci.divinesymphony.net.flashtrainer.sync.Client;
 
 /**
@@ -63,6 +67,10 @@ public class DisplayItem {
         } else {
             return this.text;
         }
+    }
+
+    public Uri getLocalUri() {
+        return Uri.parse("file://"+Client.getClient().getMediaPath()+this.file);
     }
 
     public String getSha256() { return this.sha256; }

@@ -57,6 +57,13 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:text="Problem Image Goes Here" />
+                <ImageButton
+                    android:id="@+id/btn_problem_img"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter" />
 
             </LinearLayout>
 
