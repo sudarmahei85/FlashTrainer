@@ -1,12 +1,10 @@
 package hci.divinesymphony.net.flashtrainer;
 
-import hci.divinesymphony.net.flashtrainer.backend.SampleProblemSet;
 import hci.divinesymphony.net.flashtrainer.backend.Selector;
 import hci.divinesymphony.net.flashtrainer.beans.ProblemSet;
 import hci.divinesymphony.net.flashtrainer.beans.DisplayItem;
 import hci.divinesymphony.net.flashtrainer.sync.BackgroundDownloader;
 import hci.divinesymphony.net.flashtrainer.sync.Client;
-import hci.divinesymphony.net.flashtrainer.sync.Downloader;
 import hci.divinesymphony.net.flashtrainer.util.SystemUiHider;
 
 import android.annotation.TargetApi;
@@ -254,7 +252,7 @@ public class Quiz extends Activity implements
         this.probSet = selector.getProblemSet();
         this.reward = selector.getReward();
 
-        DisplayItem problem = probSet.getProblem();
+        DisplayItem problem = probSet.getProblem().getContent();
         List<DisplayItem> responses = probSet.getResponses();
 
         this.btn_problem.setText(problem.getText());
@@ -314,8 +312,7 @@ public class Quiz extends Activity implements
     };
 
     void process_response(int N) {
-        //TODO process the click, compare result, and either delay for lockout, or present reward
-        String selectedId = this.probSet.getResponses().get(N).getId();
+        int selectedId = Integer.parseInt( this.probSet.getResponses().get(N).getId() );
 
         boolean correct = hci.divinesymphony.net.flashtrainer.backend.AnswerChecker.isCorrect(this.probSet, selectedId);
 

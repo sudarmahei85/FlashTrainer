@@ -62,7 +62,7 @@ public class Selector
         int index = (int)( Math.random()*weighted.size() );
         Problem problem = weighted.get(index);
 
-        return new ProblemSet(problem.getContent(), answerChoice(problem));
+        return new ProblemSet(problem, answerChoice(problem));
     }
 
 

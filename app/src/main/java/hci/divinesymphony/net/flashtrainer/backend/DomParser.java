@@ -148,8 +148,8 @@ public class DomParser {
         Element prresponses = (Element)nl.item(0);
         NodeList n  = prresponses.getElementsByTagName("response");
         Element prresponse = (Element)n.item(0);
-        Integer answerdId=Integer.parseInt(prresponse.getAttribute("answer"));
-        Integer groupId=Integer.parseInt(prresponse.getAttribute("group"));
+        int answerdId=Integer.parseInt(prresponse.getAttribute("answer"));
+        int groupId=Integer.parseInt(prresponse.getAttribute("group"));
 
         //parse the text description
         String text = getTextValue(El,"text");

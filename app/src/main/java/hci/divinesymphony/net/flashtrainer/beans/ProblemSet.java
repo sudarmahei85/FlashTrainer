@@ -8,16 +8,16 @@ import java.util.ArrayList;
  */
 public class ProblemSet {
 
-    private final DisplayItem problem;
+    private final Problem problem;
     private final List<DisplayItem> responses;
 
-    public ProblemSet(DisplayItem problem, List<DisplayItem> responses) {
+    public ProblemSet(Problem problem, List<DisplayItem> responses) {
         this.problem = problem;
         this.responses = new ArrayList<DisplayItem>(responses.size());
         this.responses.addAll(responses);
     }
 
-    public DisplayItem getProblem() {
+    public Problem getProblem() {
         return problem;
     }
 

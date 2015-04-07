@@ -7,8 +7,8 @@ import java.lang.StringBuffer;
 public class Problem {
 
 	private final int weight;
-    private final Integer answerId;
-    private final Integer groupId;
+    private final int answerId;
+    private final int groupId;
     private final DisplayItem item;
 	
 	public Problem(DisplayItem item, int weight,int answerId,int groupId) {
@@ -26,11 +26,11 @@ public class Problem {
 		return this.weight;
 	}
 
-    public Integer getAnswerId() {
+    public int getAnswerId() {
         return answerId;
     }
 
-    public Integer getGroupId() {
+    public int getGroupId() {
         return groupId;
     }
 }

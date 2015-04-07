@@ -17,8 +17,15 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: hci.divinesymphony.net.flashtrainer" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9920c6cc-d780-4ea0-bb68-31ec61988720" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Client.java" afterPath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Client.java" />
+    <list default="true" id="9920c6cc-d780-4ea0-bb68-31ec61988720" name="Default" comment="Image support in problems!">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/SampleProblemSet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Responses.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/AnswerChecker.java" afterPath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/AnswerChecker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/DomParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/DomParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Problem.java" afterPath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Problem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/ProblemSet.java" afterPath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/ProblemSet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java" afterPath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/Selector.java" afterPath="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/Selector.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FlashTrainer.iws" />
@@ -50,8 +57,20 @@
       <file leaf-file-name="Quiz.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2926" max-vertical-offset="4950">
-              <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="4049" max-vertical-offset="5505">
+              <caret line="317" column="0" selection-start-line="317" selection-start-column="0" selection-end-line="317" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProblemSet.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/ProblemSet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.1891892" vertical-offset="0" max-vertical-offset="555">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -60,55 +79,20 @@
       <file leaf-file-name="Selector.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/Selector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="628" max-vertical-offset="1110">
-              <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="146" max-vertical-offset="1485">
+              <caret line="62" column="46" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DisplayItem.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/DisplayItem.java">
+      <file leaf-file-name="AnswerChecker.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/AnswerChecker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="485" max-vertical-offset="1110">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Client.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.69372696" vertical-offset="2324" max-vertical-offset="3060">
-              <caret line="186" column="72" selection-start-line="186" selection-start-column="72" selection-end-line="186" selection-end-column="72" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SampleProblemSet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/SampleProblemSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Problem.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Problem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <element signature="e#331#332#0" expanded="true" />
-                <element signature="e#363#364#0" expanded="true" />
-                <element signature="e#390#391#0" expanded="true" />
-                <element signature="e#415#416#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,33 +101,32 @@
       <file leaf-file-name="DomParser.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/DomParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2490" max-vertical-offset="3675">
-              <caret line="220" column="24" selection-start-line="220" selection-start-column="24" selection-end-line="220" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1418" max-vertical-offset="4140">
+              <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="current.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/assets/current.xml">
+      <file leaf-file-name="activity_quiz.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_quiz.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="813" max-vertical-offset="1950">
-              <caret line="73" column="2" selection-start-line="73" selection-start-column="2" selection-end-line="73" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="1890">
+              <caret line="65" column="48" selection-start-line="65" selection-start-column="48" selection-end-line="65" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Downloader.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Downloader.java">
+      <file leaf-file-name="Problem.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Problem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="488" max-vertical-offset="1350">
-              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#957#970#0" expanded="true" />
-                <element signature="e#2391#2404#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -154,6 +137,11 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="true" />
     </FindUsagesManager>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="$PROJECT_DIR$/../android_signing.jks" />
+    <option name="KEY_ALIAS" value="AuPAIR_testing" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
@@ -1018,7 +1006,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_quiz.xml" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/Reward.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Reward.java" />
@@ -1026,19 +1013,21 @@
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Download.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Checksum.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Responses.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/ProblemSet.java" />
-        <option value="$PROJECT_DIR$/app/src/main/assets/current.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/CheckSum.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Sha256Sum.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/DownloadTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/BackgroundDownloader.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/DisplayItem.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Problem.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/DomParser.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Downloader.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/Selector.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Client.java" />
+        <option value="$PROJECT_DIR$/app/src/main/assets/current.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/DisplayItem.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_quiz.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/Selector.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/ProblemSet.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Problem.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/AnswerChecker.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/DomParser.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java" />
       </list>
     </option>
   </component>
@@ -1075,8 +1064,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1476,6 +1465,10 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="500" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/.." />
+    <property name="ExportApk.Flavors" value="" />
+    <property name="ExportApk.BuildType" value="release" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.parentActivityClass">
@@ -1802,7 +1795,19 @@
       <created>1428277537546</created>
       <updated>1428277537546</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Fix a sequencing problem wherein a phone that had never ran the application could not bootstrap properly.">
+      <created>1428279045801</created>
+      <updated>1428279045801</updated>
+    </task>
+    <task id="LOCAL-00033" summary="The sample xml had an invalid image element (intended as a comment), that failed bootstrapping.">
+      <created>1428279688892</created>
+      <updated>1428279688892</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Image support in problems!">
+      <created>1428285417190</created>
+      <updated>1428285417190</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1827,15 +1832,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1307" height="1010" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32949308" sideWeight="0.49960348" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32949308" sideWeight="0.49960348" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328341" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328341" sideWeight="0.49960348" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32949308" sideWeight="0.5003965" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3640553" sideWeight="0.25376686" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.49960348" order="2" side_tool="false" content_ui="tabs" />
@@ -1844,7 +1849,7 @@
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3640553" sideWeight="0.74623317" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2672482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2672482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1859,6 +1864,37 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3640553" sideWeight="0.25376686" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3986175" sideWeight="0.8120539" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.49960348" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328341" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328341" sideWeight="0.49960348" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.49960348" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.49960348" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3640553" sideWeight="0.74623317" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2672482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1875,9 +1911,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Built a stub class for providing a random reward.  Added multimedia displayItem support." />
-    <MESSAGE value="Added a few more notes to Dylan/Steve." />
-    <MESSAGE value="Merge results of applying remote changes." />
     <MESSAGE value="Fixed some compile errors resulting from the merge." />
     <MESSAGE value="Added permissions for SD card write.&#10;Renamed client to AuPAIR.&#10;&#10;Started work on the downloader (unfinished)." />
     <MESSAGE value="Added permissions for SD card write.&#10;Renamed client to AuPAIR.&#10;&#10;Started work on the downloader (far from finished)." />
@@ -1900,7 +1933,10 @@
     <MESSAGE value="Rewards parsing is now implemented." />
     <MESSAGE value="Seemed to be missing." />
     <MESSAGE value="Cleaned up some useless code that gets overwritten anyhow." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up some useless code that gets overwritten anyhow." />
+    <MESSAGE value="Fix a sequencing problem wherein a phone that had never ran the application could not bootstrap properly." />
+    <MESSAGE value="The sample xml had an invalid image element (intended as a comment), that failed bootstrapping." />
+    <MESSAGE value="Image support in problems!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Image support in problems!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1908,14 +1944,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/ProblemSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="510">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/Selector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1185" max-vertical-offset="1530">
@@ -1928,12 +1956,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="465">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#331#332#0" expanded="true" />
-            <element signature="e#363#364#0" expanded="true" />
-            <element signature="e#390#391#0" expanded="true" />
-            <element signature="e#415#416#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1961,7 +1984,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6180">
           <caret line="339" column="59" selection-start-line="339" selection-start-column="59" selection-end-line="339" selection-end-column="59" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1999,7 +2024,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="4410" max-vertical-offset="5520">
           <caret line="294" column="16" selection-start-line="294" selection-start-column="16" selection-end-line="294" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2047,7 +2074,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5520">
           <caret line="294" column="16" selection-start-line="294" selection-start-column="16" selection-end-line="294" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2088,7 +2117,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4185">
           <caret line="201" column="0" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2111,26 +2142,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="30945">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/AnswerChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42857143" vertical-offset="0" max-vertical-offset="525">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_quiz.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.119284295" vertical-offset="0" max-vertical-offset="1785">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
@@ -2225,9 +2237,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="628" max-vertical-offset="1665">
           <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2235,52 +2244,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6756757" vertical-offset="0" max-vertical-offset="555">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/ProblemSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Problem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#331#332#0" expanded="true" />
-            <element signature="e#363#364#0" expanded="true" />
-            <element signature="e#390#391#0" expanded="true" />
-            <element signature="e#415#416#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/current.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="947" max-vertical-offset="1950">
-          <caret line="73" column="2" selection-start-line="73" selection-start-column="2" selection-end-line="73" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/SampleProblemSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2926" max-vertical-offset="4950">
-          <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2296,37 +2259,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/Selector.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/current.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="628" max-vertical-offset="1110">
-          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/DisplayItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="485" max-vertical-offset="1110">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/DomParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2490" max-vertical-offset="3675">
-          <caret line="220" column="24" selection-start-line="220" selection-start-column="24" selection-end-line="220" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.45714286" vertical-offset="270" max-vertical-offset="1740">
+          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/sync/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69372696" vertical-offset="2324" max-vertical-offset="3060">
+        <state vertical-scroll-proportion="0.734375" vertical-offset="2324" max-vertical-offset="3060">
           <caret line="186" column="72" selection-start-line="186" selection-start-column="72" selection-end-line="186" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/DisplayItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.81884056" vertical-offset="297" max-vertical-offset="1230">
+          <caret line="71" column="30" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_quiz.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="1890">
+          <caret line="65" column="48" selection-start-line="65" selection-start-column="48" selection-end-line="65" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/Selector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="146" max-vertical-offset="1485">
+          <caret line="62" column="46" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/AnswerChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/backend/DomParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1418" max-vertical-offset="4140">
+          <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/Quiz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4049" max-vertical-offset="5505">
+          <caret line="317" column="0" selection-start-line="317" selection-start-column="0" selection-end-line="317" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/Problem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/hci/divinesymphony/net/flashtrainer/beans/ProblemSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1891892" vertical-offset="0" max-vertical-offset="555">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
